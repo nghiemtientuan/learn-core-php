@@ -16,7 +16,7 @@ body{
 	border: none;
 	background: none;
 	padding: 0px;
-  	border-radius: none;
+  	border-radius: 0px;
 }
 /*end logo*/
 /*search*/
@@ -62,7 +62,7 @@ body{
 	border: none;
 	background: none;
 	padding: 0px;
-  	border-radius: none;
+  	border-radius: 0px;
 }
 /*end icon*/
 /*end header-t*/
@@ -96,7 +96,7 @@ body{
 	border: none;
 	background: none;
 	padding: 0px;
-  	border-radius: none;
+  	border-radius: 0px;
 }
 #menu p{
 	margin-left: 7px;
@@ -233,6 +233,7 @@ section{
 }
 #good-product a{
 	float: right;
+	color: #A4A5A7;
 }
 #good-product a:hover{
 	text-decoration: none;
@@ -250,6 +251,37 @@ section{
 /*end section*/
 
 /*footer*/
+/*email-news-register*/
+#email-news-register{
+	background: #F7F7F7;
+}
+#email-text{
+	height: 80px;
+	line-height: 80px;
+}
+#email-icon img{
+	border: none;
+	background: none;
+	padding: 0px;
+  	border-radius: 0px;
+  	float: right;
+}
+#email-text{
+	float: right;
+}
+#email-news-register form{
+	height: 80px;
+	line-height: 80px;
+}
+#email-news-register form input[type=text]{
+	width: 300px;
+	height: 45px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding-left: 3px;
+}
+/*end-email-news-register*/
+
 /*footer-t*/
 #logo-f{
 	padding: 0px;
