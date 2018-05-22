@@ -53,7 +53,7 @@ body{
 }
 .icon-item a:hover{
 	text-decoration: none;
-	color: #fff;
+	color: #ccc;
 }
 .icon-item img{
 	width: 30px;
@@ -185,6 +185,7 @@ section{
 /*product*/
 .product{
 	margin-top: 20px;
+	overflow: hidden;
 }
 .product > h3{
 	float: left;
@@ -210,6 +211,13 @@ section{
 	border-bottom: 2px solid #ccc;
 	border-left: 2px solid #ccc;
 	border-right: 2px solid #ccc;
+}
+.product-item a{
+	color: #000;
+}
+.product-item a:hover{
+	text-decoration: none;
+	color: #000;
 }
 .product-item img{
 	width: 188px;
@@ -238,13 +246,23 @@ section{
 #good-product a:hover{
 	text-decoration: none;
 	color: #FF9600;
-	font-size: 17px;
 }
-#good-product .product-item img:last-child{
+#good-product .product-item{
 	position: relative;
+}
+#good-product .product-item .product-logo{
+	position: absolute;
+	left: 66px;
+	bottom: 22px;
 	width: 60px;
 	height: 60px;
 	border: 3px solid #fff;
+}
+#good-product .product-item p{
+	clear: both;
+	margin: 0px;
+	color: #ff9600;
+	text-align: center;
 }
 /*end good-product*/
 /*end main*/
@@ -278,7 +296,7 @@ section{
 	height: 45px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	padding-left: 3px;
+	padding-left: 5px;
 }
 /*end-email-news-register*/
 
