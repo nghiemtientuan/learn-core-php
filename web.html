@@ -10,7 +10,80 @@
 	<script src="js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/web.js"></script>
-	<script type="text/javascript" src="js/web.js"></script>
+	<!-- <script type="text/javascript" src="js/web.js"></script> -->
+	<script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              },
+              $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Orientation: 2
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
 </head>
 <body>
 	<!-- header -->
@@ -29,25 +102,25 @@
 						</form>
 					</div>
 					<div id="icon" class="col-lg-4 col-md-4 col-sm-4 col-12">
-						<div class="icon-item">
+						<div class="icon-item col-lg-3 col-md-3 col-sm-3 col-12">
 							<a href="#" title="">
 								<img src="img/login.png" class="img-thumbnail">
 								<p>Login</p>
 							</a>
 						</div>
-						<div class="icon-item">
+						<div class="icon-item col-lg-3 col-md-3 col-sm-3 col-12">
 							<a href="#" title="">
 								<img src="img/new.png" class="img-thumbnail">
 								<p>Khuyến mãi</p>
 							</a>
 						</div>
-						<div class="icon-item">
+						<div class="icon-item col-lg-3 col-md-3 col-sm-3 col-12">
 							<a href="#" title="">
 								<img src="img/sale.png" class="img-thumbnail">
 								<p>Trả góp</p>
 							</a>
 						</div>
-						<div class="icon-item">
+						<div class="icon-item col-lg-3 col-md-3 col-sm-3 col-12">
 							<a href="#" title="">
 								<img src="img/cart.png" class="img-thumbnail">
 								<p>Giỏ hàng</p>
@@ -219,6 +292,8 @@
 						            </div>
 						        </div>
 						    </div>
+						    <script type="text/javascript">jssor_1_slider_init();</script>
+   							<!-- #endregion Jssor Slider End -->
 					</div>
 					<!-- end slide -->
 
@@ -233,13 +308,13 @@
 					</div>
 					<!-- end flyer -->
 					<div id="banner-b">
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 							<a href="#" title=""><img src="img/banner2.png" class="img-thumbnail"></a>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 							<a href="#" title=""><img src="img/banner2.png" class="img-thumbnail"></a>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 							<a href="#" title=""><img src="img/banner2.png" class="img-thumbnail"></a>
 						</div>
 					</div>
@@ -252,7 +327,7 @@
 						<h3>Sản phẩm giảm giá mạnh</h3>
 						<a href="#">Xem tất cả</a>
 						<div class="product-list row" style="margin: 0px;">
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product16.jpg" class="img-thumbnail">
 									<h4>Flycam Dij Mavic Pro Combo</h4>
@@ -261,7 +336,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product3.jpg" class="img-thumbnail">
 									<h4>Gậy selfie 3 khúc cho Gropro Sjcam</h4>
@@ -270,7 +345,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product6.jpg" class="img-thumbnail">
 									<h4>Sâm ngọc linh Hàn Quốc</h4>
@@ -279,7 +354,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product11.jpg" class="img-thumbnail">
 									<h4>Ba lô đeo chéo leo núi</h4>
@@ -288,7 +363,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product8.jpg" class="img-thumbnail">
 									<h4>Gimbup chống rung camera</h4>
@@ -297,7 +372,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product12.jpg" class="img-thumbnail">
 									<h4>Kính bảo hộ đi đường</h4>
@@ -306,7 +381,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product19.jpg" class="img-thumbnail">
 									<h4>Ba lô một bên</h4>
@@ -315,7 +390,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product18.jpg" class="img-thumbnail">
 									<h4>Ổ điện 10 giắc</h4>
@@ -324,7 +399,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product7.jpg" class="img-thumbnail">
 									<h4>Máy xay thịt đa năng</h4>
@@ -333,7 +408,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product17.jpg" class="img-thumbnail">
 									<h4>Combo 3 lens điện thoại</h4>
@@ -342,7 +417,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12"
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12"
 							style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product21.jpg" class="img-thumbnail">
@@ -352,7 +427,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12"
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12"
 							style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product15.jpg" class="img-thumbnail">
@@ -368,7 +443,7 @@
 						<h3>Sản phẩm mới</h3>
 						<a href="#">Xem tất cả</a>
 						<div class="product-list row" style="margin: 0px;">
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product16.jpg" class="img-thumbnail">
 									<h4>Flycam Dij Mavic Pro Combo</h4>
@@ -376,7 +451,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product3.jpg" class="img-thumbnail">
 									<h4>Gậy selfie 3 khúc cho Gropro Sjcam</h4>
@@ -384,7 +459,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product6.jpg" class="img-thumbnail">
 									<h4>Sâm ngọc linh Hàn Quốc</h4>
@@ -392,7 +467,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product11.jpg" class="img-thumbnail">
 									<h4>Ba lô đeo chéo leo núi</h4>
@@ -400,7 +475,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product8.jpg" class="img-thumbnail">
 									<h4>Gimbup chống rung camera</h4>
@@ -408,7 +483,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product12.jpg" class="img-thumbnail">
 									<h4>Kính bảo hộ đi đường</h4>
@@ -416,7 +491,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product19.jpg" class="img-thumbnail">
 									<h4>Ba lô một bên</h4>
@@ -424,7 +499,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product18.jpg" class="img-thumbnail">
 									<h4>Ổ điện 10 giắc</h4>
@@ -432,7 +507,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product7.jpg" class="img-thumbnail">
 									<h4>Máy xay thịt đa năng</h4>
@@ -440,7 +515,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product17.jpg" class="img-thumbnail">
 									<h4>Combo 3 lens điện thoại</h4>
@@ -448,7 +523,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product21.jpg" class="img-thumbnail">
 									<h4>Action camera heken</h4>
@@ -456,7 +531,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product15.jpg" class="img-thumbnail">
 									<h4>Bộ 3 gối ngủ cho bé</h4>
@@ -470,42 +545,42 @@
 						<h2>Sản phẩm chính hãng</h2>
 						<a href="#">Xem tất cả</a>
 						<div class="product-list row" style="margin: 0px;">
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product1.jpg" class=" img-thumbnail">
 									<img src="img/comunity-logo1.jpg" class="product-logo img-thumbnail">
 									<p>Apple</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product2.jpg" class="img-thumbnail">
 									<img src="img/comunity-logo2.jpg" class="product-logo img-thumbnail">
 									<p>Glucerna</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product3.jpg" class="img-thumbnail">
 									<img src="img/comunity-logo3.jpg" class="product-logo img-thumbnail">
 									<p>Bobby</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product4.jpg" class="img-thumbnail">
 									<img src="img/comunity-logo4.jpg" class="product-logo img-thumbnail">
 									<p>Pampers</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product5.jpg" class="img-thumbnail">
 									<img src="img/comunity-logo5.jpg" class="product-logo img-thumbnail">
 									<p>Friso</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding: 0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding: 0px;">
 								<a href="#" title="">
 									<img src="img/good-product6.jpg" class="img-thumbnail">
 									<img src="img/comunity-logo6.jpg" class="product-logo img-thumbnail">
@@ -518,7 +593,7 @@
 						<h3>Sản phẩm nổi bật</h3>
 						<a href="#">Xem tất cả</a>
 						<div class="product-list row" style="margin: 0px;">
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product16.jpg" class="img-thumbnail">
 									<h4>Flycam Dij Mavic Pro Combo</h4>
@@ -526,7 +601,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product3.jpg" class="img-thumbnail">
 									<h4>Gậy selfie 3 khúc cho Gropro Sjcam</h4>
@@ -534,7 +609,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product6.jpg" class="img-thumbnail">
 									<h4>Sâm ngọc linh Hàn Quốc</h4>
@@ -542,7 +617,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product11.jpg" class="img-thumbnail">
 									<h4>Ba lô đeo chéo leo núi</h4>
@@ -550,7 +625,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product8.jpg" class="img-thumbnail">
 									<h4>Gimbup chống rung camera</h4>
@@ -558,7 +633,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product12.jpg" class="img-thumbnail">
 									<h4>Kính bảo hộ đi đường</h4>
@@ -566,7 +641,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product19.jpg" class="img-thumbnail">
 									<h4>Ba lô một bên</h4>
@@ -574,7 +649,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product18.jpg" class="img-thumbnail">
 									<h4>Ổ điện 10 giắc</h4>
@@ -582,7 +657,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product7.jpg" class="img-thumbnail">
 									<h4>Máy xay thịt đa năng</h4>
@@ -590,7 +665,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product17.jpg" class="img-thumbnail">
 									<h4>Combo 3 lens điện thoại</h4>
@@ -598,7 +673,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product21.jpg" class="img-thumbnail">
 									<h4>Action camera heken</h4>
@@ -606,7 +681,7 @@
 									<p>Khuyến mại:</p>
 								</a>
 							</div>
-							<div class="product-item col-lg-2 col-md-2 col-sm-4 col-12" style="padding:0px;">
+							<div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
 								<a href="#" title="">
 									<img src="img/product15.jpg" class="img-thumbnail">
 									<h4>Bộ 3 gối ngủ cho bé</h4>
@@ -628,15 +703,13 @@
 		<div id="email-news-register">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
-						<div id="email-text">
-							<p>Đăng ký nhận bản tin chương trình từ <b>TNT Studio</b></p>
-						</div>
-						<div id="email-icon">
-							<img src="img/email-news-register.png" class="img-thumbnail">
-						</div>
+					<div id="email-icon" class="col-lg-2 col-md-2 col-sm-2 col-12">
+						<img src="img/email-news-register.png" class="img-thumbnail">
 					</div>
-					<div class="col-lg-6">
+					<div id="email-text" class="col-lg-4 col-md-4 col-sm-4 col-12">
+						<p>Đăng ký nhận bản tin chương trình từ <b>TNT Studio</b></p>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 						<form action="web_email-news-register" method="post">
 							<input type="text" name="email-news-register" value="" placeholder="Địa chỉ email của bạn">
 							<input type="radio" name="gender" value="Nam"> Nam
@@ -654,7 +727,7 @@
 					<a href="#" title=""><img src="img/tntstudio.png" class="img-thumbnail"></a>
 				</div>
 				<div id="info" class="col-lg-12 col-12">
-					<div class="info-item col-lg-3" style="padding:0px;">
+					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-12" style="padding:0px;">
 						<ul>
 							<li><a href="#">Giới thiệu về công ty</a></li>
 							<li><a href="#">Câu hỏi thường gặp mua hàng</a></li>
@@ -662,7 +735,7 @@
 							<li><a href="#">Hệ thống bảo hành</a></li>
 						</ul>
 					</div>
-					<div class="info-item col-lg-3" style="padding:0px;">
+					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-12" style="padding:0px;">
 						<ul>
 							<li><a href="#">Tin tuyển dụng</a></li>
 							<li><a href="#">Tin khuyến mãi</a></li>
@@ -670,7 +743,7 @@
 							<li><a href="#">Hướng dẫn mua trả góp</a></li>
 						</ul>
 					</div>
-					<div class="info-item col-lg-3" style="padding:0px;">
+					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-12" style="padding:0px;">
 						<ul>
 							<li><a href="#">Hệ thống của hàng</a></li>
 							<li><a href="#">Giới thiệu hàng secondHand</a></li>
@@ -678,7 +751,7 @@
 							<li><a href="#">Giới thiệu xả hàng</a></li>
 						</ul>
 					</div>
-					<div id="contact" class="col-lg-3" style="padding:0px;">
+					<div id="contact" class="col-lg-3 col-md-6 col-sm-6 col-12" style="padding:0px;">
 						<p>Tư vấn miễn phí (24/7):</p>
 						<b style="color: #D0021B; text-transform: bold;">0123456789</b>
 						<p>Hỗ trợ thanh toán:</p>
