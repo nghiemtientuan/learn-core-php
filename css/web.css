@@ -5,12 +5,31 @@
 body{
 	font-family: Arial;
 }
+.fix-container{
+	width: 100%;
+  	padding-right: 0px;
+  	padding-left: 0px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+.fix-row{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
 /*header-t*/
 #header-t{
 	background-color: #CD1818;
 	height: 55px;
 }
 /*logo*/
+#logo{
+	padding: 0px;
+}
 #logo img{
 	width: 190px;
 	border: none;
@@ -74,23 +93,26 @@ body{
 	background: #252525;
 	height: 35px;			
 }
-#menu ul{
+#menu{
+	padding: 0px;
+}
+#menu >ul{
 	list-style: none;
 	height: 35px;
 	line-height: 35px;
 }
-#menu li{
+#menu >ul >li{
 	float: left;
-	margin-right: 30px;
+	margin-right: 40px;
 }
-#menu a{
+#menu >ul >li >a{
 	color: #fff;
 }
-#menu a:hover{
+#menu >ul >li >a:hover{
 	color: #CCC;
 	text-decoration: none;
 }
-#menu img{
+#menu ul> li> a >img{
 	width: 30px;
 	height: 30px;
 	float: left;
@@ -100,7 +122,7 @@ body{
 	padding: 0px;
   	border-radius: 0px;
 }
-#menu p{
+#menu ul> li > a >p{
 	margin-left: 7px;
 	float: left;
 }
@@ -130,11 +152,6 @@ section{
 	animation-timing-function: linear;
 }
 
-@keyframes jssorl-009-spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
 /*jssor slider bullet skin 111 css*/
 .jssorb111 .i {position:absolute;color:#fff;font-family:"Helvetica neue",Helvetica,Arial,sans-serif;text-align:center;cursor:pointer;z-index:0;}
 .jssorb111 .i .n {display:none;}
@@ -159,18 +176,17 @@ section{
 /*flyer*/
 #flyer{
 	float: left;
-	padding-right: 0px;
+	padding: 0px;
+	margin-left: -11px;
 }
 #flyer div img{
-	width: 177px;
-	height: 177px;
 	border: none;
 	background: none;
 	padding: 0px;
   	border-radius: 0px;
 }
 .flyer:last-child{
-	margin-top: 7px;
+	margin-top: 21px;
 }
 /*end flyer*/
 
@@ -350,3 +366,33 @@ section{
 }
 /*end footer-b*/
 /*end footer*/
+
+/*@media*/
+@keyframes jssorl-009-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@media (min-width: 576px) {
+  .fix-containerx {
+    max-width: 576px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fix-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .fix-container {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fix-container {
+    max-width: 1200px;
+  }
+}
