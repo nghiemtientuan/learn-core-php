@@ -139,6 +139,7 @@ body{
 	display: none;
 	position: absolute;
 	top: 100%;
+	left: 0%;
 	width: 100%;
 	z-index: 1;/*hiển thị trên slide-cần phải có position: relative*/
 }
