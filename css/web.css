@@ -44,7 +44,7 @@ body{
 /*search*/
 #search input[type=text]{
 	height: 35px;
-	width: 460px;
+	width: 80%;
 	margin-top: 10px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -383,8 +383,7 @@ section{
 	background: #F7F7F7;
 }
 #email-text{
-	height: 80px;
-	line-height: 80px;
+	margin-top: 33px;
 }
 #email-icon, #email-text, #email-form{
 	padding: 0px;
@@ -397,8 +396,7 @@ section{
   	float: right;
 }
 #email-news-register form{
-	height: 80px;
-	line-height: 80px;
+	margin-top: 17px;
 }
 #email-news-register form input[type=text]{
 	width: 300px;
@@ -486,4 +484,62 @@ section{
   .fix-container {
     max-width: 1200px;
   }
+}
+
+@media (max-width: 1023px){
+	#search input[type=text]{
+		width: 65%;
+	}
+	#email-news-register form input[type=text]{
+		width: 40%;
+	}
+}
+@media (max-width: 1200px){
+	#icon p{
+		font-size: 12px;
+	}
+	#email-text{
+		margin-top: 24px;
+	}
+}
+@media (max-width: 1000px){
+	#icon p{
+		font-size: 10px;
+	}
+}
+@media (max-width: 1200px) and (min-width: 1000px){
+	#menu >ul >li{
+		margin-right: 20px;
+	}
+}
+@media (max-width: 999px) and (min-width: 800px){
+	#menu >ul >li{
+		margin-right: 1px;
+	}
+	#menu >ul >li >a >p{
+		margin-left: 0px;
+	}
+}
+@media (max-width: 800px){
+	#menu >ul >li >a >p{
+		display: none;
+	}
+	#menu >ul >li{
+		margin-right: 7%;
+	}
+}
+@media (max-width: 768px){
+	#flyer{
+		display: none;
+	}
+}
+@media (max-width: 730px){
+	#menu ul{
+		display: none;
+	}
+}
+@media (max-width: 600px){
+	#email-form form  button{
+		margin: 0px;
+	}
 }
