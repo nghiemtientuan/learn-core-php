@@ -30,6 +30,9 @@ body{
 #logo{
 	padding: 0px;
 }
+#logo h1{
+	margin: 0px;
+}
 #logo img{
 	width: 190px;
 	border: none;
@@ -84,6 +87,9 @@ body{
 	background: none;
 	padding: 0px;
   	border-radius: 0px;
+}
+.icon-item p{
+	margin: 0px;
 }
 /*end icon*/
 /*end header-t*/
@@ -156,6 +162,7 @@ body{
 }
 .menu-child-list{
 	float: left;
+	border-top: 1px solid #ccc;
 }
 .menu-child-list ul{
 	list-style: none;
@@ -229,7 +236,6 @@ section{
 #flyer{
 	float: left;
 	padding: 0px;
-	margin-left: -11px;
 }
 #flyer div img{
 	border: none;
@@ -243,10 +249,17 @@ section{
 /*end flyer*/
 
 /*banner-b*/
-#banner-b div{
-	margin-top: 5px;
+#banner-b > div{
+	margin-top: 8px;
 	float: left;
 	padding: 0px;
+}
+#banner-b div a img{
+	min-width: 100%;
+	border: none;
+	background: none;
+	padding: 0px;
+  	border-radius: 0px;
 }
 /*end banner-b*/
 /*end aside*/
@@ -290,8 +303,7 @@ section{
 	color: #000;
 }
 .product-item img{
-	width: 188px;
-	height: 188px;
+	min-width: 100%;
 	border: none;
 	background: none;
 	padding: 0px;
@@ -306,33 +318,60 @@ section{
 #good-product{
 	margin-top: 20px;
 }
-#good-product h2{
+#good-product > h2{
 	float: left;
 }
-#good-product a{
+#good-product > a{
 	float: right;
 	color: #A4A5A7;
 }
-#good-product a:hover{
+#good-product > a:hover{
 	text-decoration: none;
 	color: #FF9600;
 }
-#good-product .product-item{
+#good-product .good-product-list{
+	clear: both;
+	margin-top: 3px;
+}
+#good-product .good-product-list .good-product-item{
+	background: #fff;
+	border: 2px solid #fff;
 	position: relative;
 }
-#good-product .product-item .product-logo{
-	position: absolute;
-	left: 66px;
-	bottom: 22px;
-	width: 60px;
-	height: 60px;
-	border: 3px solid #fff;
+#good-product .good-product-list .good-product-item:hover{
+	border-bottom: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+	border-right: 2px solid #ccc;
 }
-#good-product .product-item p{
-	clear: both;
+.good-product-item a{
+	color: #000;
+}
+.good-product-item a:hover{
+	text-decoration: none;
+	color: #000;
+}
+.good-product-item img:first-child{
+	min-width: 100%;
+	border: none;
+	background: none;
+	padding: 0px;
+  	border-radius: 0px;
+}
+#good-product .good-product-list .good-product-item a .good-product-logo{
+	width: 26%;
+	position: absolute;
+	left: 37%;
+	bottom: 24px;
+	border: 3px solid yellow;
+	padding: 0px;
+
+}
+#good-product .good-product-list .good-product-item a p{
+	overflow: hidden;
 	margin: 0px;
-	color: #ff9600;
 	text-align: center;
+	color: #ff9600;
+	font-weight: bold;
 }
 /*end good-product*/
 /*end main*/
@@ -347,15 +386,15 @@ section{
 	height: 80px;
 	line-height: 80px;
 }
+#email-icon, #email-text, #email-form{
+	padding: 0px;
+}
 #email-icon img{
 	border: none;
 	background: none;
 	padding: 0px;
   	border-radius: 0px;
   	float: right;
-}
-#email-text{
-	float: right;
 }
 #email-news-register form{
 	height: 80px;
