@@ -1,0 +1,100 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-family: Arial;
+}
+.fix-container{
+	width: 100%;
+  	padding-right: 0px;
+  	padding-left: 0px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+.fix-row{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+aside{
+	margin: 10px 0px;
+}
+#slide-product{
+	padding: 0px;
+}
+#banner-product{
+	padding: 0px;
+	margin-top: 10px;
+}
+#banner-product div{
+	padding: 0px 4px;
+	float: left;
+}
+#banner-product div:first-child{
+	padding-right: 8px;
+	padding-left: 0px
+}
+#banner-product div:last-child{
+	padding-left: 8px;
+	padding-right: 0px;
+}
+.banner-product-item img{
+	padding: 0px;
+	border: none;
+	border-radius: 0px;
+}
+/*jssor slider loading skin spin css*/
+.jssorl-009-spin img {
+	animation-name: jssorl-009-spin;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/*jssor slider bullet skin 051 css*/
+.jssorb051 .i {position:absolute;cursor:pointer;}
+.jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+.jssorb051 .i:hover .b {fill-opacity:.7;}
+.jssorb051 .iav .b {fill-opacity: 1;}
+.jssorb051 .i.idn {opacity:.3;}
+
+/*jssor slider arrow skin 051 css*/
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+@media (min-width: 576px) {
+  .fix-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fix-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .fix-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fix-container {
+    max-width: 1140px;
+  }
+}
