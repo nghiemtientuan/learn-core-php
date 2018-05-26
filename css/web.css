@@ -24,7 +24,7 @@ body{
 /*header-t*/
 #header-t{
 	background-color: #CD1818;
-	height: 55px;
+	height: auto;
 }
 /*logo*/
 #logo{
@@ -96,8 +96,10 @@ body{
 
 /*header-b*/
 #header-b{
-	background: #252525;
-	height: 35px;			
+	background: #252525;			
+}
+#header-b nav{
+	padding: 0px;
 }
 #menu{
 	padding: 0px;
@@ -530,11 +532,6 @@ section{
 }
 @media (max-width: 768px){
 	#flyer{
-		display: none;
-	}
-}
-@media (max-width: 730px){
-	#menu ul{
 		display: none;
 	}
 }
