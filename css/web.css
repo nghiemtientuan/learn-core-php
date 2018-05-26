@@ -100,14 +100,15 @@ body{
 }
 #header-b nav{
 	padding: 0px;
+	width: 100%;
 }
 #menu{
 	padding: 0px;
+	width: 100%;
 }
 #menu >ul{
+	width: 100%;
 	list-style: none;
-	height: 35px;
-	line-height: 35px;
 	margin-bottom: 0px;
 	position: relative;
 }
@@ -526,17 +527,31 @@ section{
 	#menu >ul >li >a >p{
 		display: none;
 	}
-	#menu >ul >li{
-		margin-right: 7%;
-	}
 }
 @media (max-width: 768px){
 	#flyer{
+		display: none;
+	}
+	#banner-b{
+		display: none;
+	}
+	#slide{
 		display: none;
 	}
 }
 @media (max-width: 600px){
 	#email-form form  button{
 		margin: 0px;
+	}
+}
+@media (max-width: 767px){
+	#menu >ul >li{
+		clear: both;
+	}
+	#menu >ul >li:hover .menu-child{
+		display: none;
+	}
+	#menu >ul >li >a> p{
+		display: block;
 	}
 }
