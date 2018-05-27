@@ -75,13 +75,59 @@ aside{
 .jssora051.jssora051dn {opacity:.5;}
 .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
 
-
 #bar-OP, #product-OP{
 	float: left;
 	padding: 0px;
 }
+#bar-OP p{
+	background: #ccc;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#bar-OP li{
+	list-style: none;
+	margin-left: 20px;
+}
+#bar-OP a{
+	color: #000;
+}
+#bar-OP a:hover{
+	text-decoration: none;
+	color: #CCC;
+}
+#product-values-OP div:first-child{
+	float: left;
+	padding-left: 20px;
+}
+#product-values-OP div:last-child{
+	float: right;
+}
+#product-values-OP p{
+	color: #70667F;
+}
+#product-list-OP{
+	clear: both;
+}
 .product-item-OP{
 	float: left;
+}
+.product-item-OP img{
+	padding: 0px;
+	border: none;
+	border-radius: 0px;
+}
+.product-item-OP a{
+	color: #000;
+}
+.product-item-OP a b{
+	color: #ff9600;
+}
+.product-item-OP a p{
+	font-size: 11px;
+}
+.product-item-OP a:hover{
+	text-decoration: none;
+	color: #000;
 }
 
 @media (min-width: 576px) {
