@@ -75,26 +75,35 @@ aside{
 .jssora051.jssora051dn {opacity:.5;}
 .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
 
+
+#bar-OP, #product-OP{
+	float: left;
+	padding: 0px;
+}
+.product-item-OP{
+	float: left;
+}
+
 @media (min-width: 576px) {
   .fix-container {
-    max-width: 540px;
+    max-width: 576px;
   }
 }
 
 @media (min-width: 768px) {
   .fix-container {
-    max-width: 720px;
+    max-width: 768px;
   }
 }
 
 @media (min-width: 992px) {
   .fix-container {
-    max-width: 960px;
+    max-width: 992px;
   }
 }
 
 @media (min-width: 1200px) {
   .fix-container {
-    max-width: 1140px;
+    max-width: 1200px;
   }
 }
