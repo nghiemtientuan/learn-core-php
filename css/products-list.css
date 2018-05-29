@@ -21,12 +21,39 @@ body{
   margin-right: 0px;
   margin-left: 0px;
 }
+
+/*aside*/
 aside{
 	margin: 10px 0px;
 }
+/*slide*/
 #slide-product{
 	padding: 0px;
 }
+/*jssor slider loading skin spin css*/
+.jssorl-009-spin img {
+	animation-name: jssorl-009-spin;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+/*jssor slider bullet skin 051 css*/
+.jssorb051 .i {position:absolute;cursor:pointer;}
+.jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+.jssorb051 .i:hover .b {fill-opacity:.7;}
+.jssorb051 .iav .b {fill-opacity: 1;}
+.jssorb051 .i.idn {opacity:.3;}
+
+/*jssor slider arrow skin 051 css*/
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+/*end slide*/
+
+/*banner*/
 #banner-product{
 	padding: 0px;
 	margin-top: 10px;
@@ -48,36 +75,18 @@ aside{
 	border: none;
 	border-radius: 0px;
 }
-/*jssor slider loading skin spin css*/
-.jssorl-009-spin img {
-	animation-name: jssorl-009-spin;
-	animation-duration: 1.6s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
+/*end banner*/
 
-@keyframes jssorl-009-spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
 
-/*jssor slider bullet skin 051 css*/
-.jssorb051 .i {position:absolute;cursor:pointer;}
-.jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
-.jssorb051 .i:hover .b {fill-opacity:.7;}
-.jssorb051 .iav .b {fill-opacity: 1;}
-.jssorb051 .i.idn {opacity:.3;}
+/*end aside*/
 
-/*jssor slider arrow skin 051 css*/
-.jssora051 {display:block;position:absolute;cursor:pointer;}
-.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
-.jssora051:hover {opacity:.8;}
-.jssora051.jssora051dn {opacity:.5;}
-.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
-
+/*bar-OP*/
 #bar-OP, #product-OP{
 	float: left;
 	padding: 0px;
+}
+#bar-OP{
+	padding-right: 3px;
 }
 #bar-OP p{
 	background: #ccc;
@@ -95,6 +104,17 @@ aside{
 	text-decoration: none;
 	color: #CCC;
 }
+/*end bar-OP*/
+
+/*product-OP*/
+#product-OP{
+	margin-bottom: 20px;
+}
+#product-values-OP{
+	height: 81px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
 #product-values-OP div:first-child{
 	float: left;
 	padding-left: 20px;
@@ -110,6 +130,13 @@ aside{
 }
 .product-item-OP{
 	float: left;
+	border: 2px solid #fff;
+}
+.product-item-OP:hover{
+	border: 2px solid #ccc;
+}
+.product-item-OP:hover button{
+	display: block;
 }
 .product-item-OP img{
 	padding: 0px;
@@ -124,11 +151,39 @@ aside{
 }
 .product-item-OP a p{
 	font-size: 11px;
+	margin: 0px;
 }
 .product-item-OP a:hover{
 	text-decoration: none;
 	color: #000;
 }
+.product-item-OP div{
+	height: 37px;
+}
+.product-item-OP button{
+	width: 100%;
+	display: none;
+}
+/*end product-OP*/
+
+/*info-OP*/
+#info-OP{
+	clear: both;
+}
+#info-OP div p{
+	font-size: 20px;
+	color: #000;
+	margin: 0px;
+}
+#info-OP div ul{
+	margin: 0px;
+	margin-left: 20px;
+	font-size: 12px;
+}
+#info-OP div ul li{
+	list-style: none;
+}
+/*end info-OP*/
 
 @media (min-width: 576px) {
   .fix-container {
@@ -152,4 +207,8 @@ aside{
   .fix-container {
     max-width: 1200px;
   }
+}
+@keyframes jssorl-009-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }

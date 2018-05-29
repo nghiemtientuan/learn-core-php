@@ -1,0 +1,47 @@
+*{
+	margin: 0px;
+	padding: 0px
+}
+body{
+	font-family: Arial;
+}
+.fix-container{
+	width: 100%;
+  	padding-right: 0px;
+  	padding-left: 0px;
+  	margin-right: auto;
+  	margin-left: auto;
+}
+.fix-row{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media (min-width: 576px) {
+  .fix-container {
+    max-width: 576px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fix-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .fix-container {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .fix-container {
+    max-width: 1200px;
+  }
+}
