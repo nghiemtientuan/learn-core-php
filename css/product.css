@@ -24,6 +24,7 @@ body{
 /*main*/
 /*product-top*/
 #product-top{
+  margin-top: 20px;
   background-color: #fff;
   margin-bottom: 15px;
   overflow: hidden;
@@ -49,6 +50,13 @@ body{
   background-color: #fff;
   padding: 0px;
 }
+#product-name div p{
+  padding: 0px;
+  margin: 0px;
+}
+#product-name button{
+  margin-top: 20px;
+}
 /*end product-name*/
 /*address*/
 #address{
@@ -59,10 +67,12 @@ body{
 }
 #address >div >p{
   color: #A4A6A4;
+  padding: 0px;
   margin-bottom: 5px;
 }
 #address >div >div{
   clear: both;
+  overflow: hidden;
 }
 #address >div >div >img{
   float: left;
@@ -72,7 +82,20 @@ body{
   border-bottom: 2px solid #ccc;
 }
 #address >div >div >p{
+  padding: 0px;
+  margin-left: 10px;
   float: left;
+}
+#address img{
+  width: 30px;
+  padding: 0px;
+  background-color: #FAFAFA;
+  border: none;
+  border-radius: 0rem;
+}
+#address input{
+  margin-left: 10px;
+  background-color: #FAFAFA;
 }
 /*end address*/
 /*product-top*/
@@ -135,7 +158,8 @@ body{
 }
 #quang-cao >p{
   margin-bottom: 0px;
-  background-color: #FAFAFA
+  text-align:center;
+  background-color: #FAFAFA;
 }
 #quang-cao div{
   border: 1px solid #fff;
@@ -151,6 +175,7 @@ body{
   color: #ccc;
 }
 #quang-cao div a p{
+  text-align: center;
   padding-left: 5px;
   margin: 0px;
 }

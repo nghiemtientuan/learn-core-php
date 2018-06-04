@@ -7,10 +7,10 @@ body{
 }
 .fix-container{
 	width: 100%;
-  	padding-right: 0px;
-  	padding-left: 0px;
-  	margin-right: auto;
-  	margin-left: auto;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .fix-row{
   display: -webkit-box;
@@ -21,7 +21,22 @@ body{
   margin-right: 0px;
   margin-left: 0px;
 }
-
+/*main*/
+main{
+  width: 100%;
+}
+#product-list, #pay{
+  float: left;
+}
+/*product-list*/
+#product-list >p{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+/*end product-list*/
+/*pay*/
+/*end pay*/
+/*end main*/
 @media (min-width: 576px) {
   .fix-container {
     max-width: 576px;
