@@ -1,0 +1,42 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+main{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 20px;	
+}
+main >p{
+	font-size: 24px;
+}
+form{
+	overflow: hidden;
+	background-color: #fff;
+	width: 100%;
+	padding: 20px;
+}
+#mail{
+	float: left;
+}
+#mail p{
+	margin: 0px;
+	font-size: 13px;
+}
+#mail input{
+	width: 100%;
+}
+#mail a{
+	float: right;
+}
+#login{
+	float: left;
+}
+#login input{
+	width: 100%;
+	border: none;
+}
+#login p{
+	margin-top: 10px;
+	font-size: 14px;
+}
