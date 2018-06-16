@@ -14,8 +14,8 @@
 	<section>
 		<div class="fix-container">
 			<div class="fix-row">
-				<main>
-					<div id="product-list" class="col-lg-8">
+				<main id="main-cart">
+					<div id="product-list" class="col-lg-8 col-md-8 col-ms-8 col-12">
 						<p>Giỏ hàng của bạn (<b style="text-transform: none; font-size: 14px;">2 sản phẩm</b>)</p>
 						<hr>
 						<div class="product">
@@ -47,7 +47,7 @@
 							<hr>
 						</div>
 					</div>
-					<div id="pay" class="col-lg-4">
+					<div id="pay" class="col-lg-4 col-md-4 col-ms-4 col-12">
 						<div>
 							<p>Địa điểm:</p>
 							<img class="img-thumbnail" src="img/products/icon-map.png" alt="">

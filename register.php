@@ -13,7 +13,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<main>
+				<main id="main-register">
 					<p>Tạo tài khoản thành viên TNT Studioer</p>
 					<form action="register_submit" method="post" accept-charset="utf-8">
 						<div id="col-1" class="col-lg-6 col-md-6 col-ms-6 col-12">

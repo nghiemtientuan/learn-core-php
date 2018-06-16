@@ -2,41 +2,41 @@
 	margin: 0px;
 	padding: 0px;
 }
-main{
+#main-login{
 	width: 70%;
 	margin: 0 auto;
 	margin-top: 20px;	
 }
-main >p{
+#main-login >p{
 	font-size: 24px;
 }
-form{
+#main-login form{
 	overflow: hidden;
 	background-color: #fff;
 	width: 100%;
 	padding: 20px;
 }
-#mail{
+#main-login #mail{
 	float: left;
 }
-#mail p{
+#main-login #mail p{
 	margin: 0px;
 	font-size: 13px;
 }
-#mail input{
+#main-login #mail input{
 	width: 100%;
 }
-#mail a{
+#main-login #mail a{
 	float: right;
 }
-#login{
+#main-login #login-button{
 	float: left;
 }
-#login input{
+#main-login #login-button input{
 	width: 100%;
 	border: none;
 }
-#login p{
+#main-login #login-button p{
 	margin-top: 10px;
 	font-size: 14px;
 }

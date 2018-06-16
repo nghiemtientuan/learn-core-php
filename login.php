@@ -13,7 +13,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<main>
+				<main id="main-login">
 					<p>Chào mừng đến với TNT Studio. Đăng nhập ngay!</p>
 					<form action="login_submit" method="post" accept-charset="utf-8">
 						<div id="mail" class="col-lg-7 col-md-7 col-sm-7 col-12">
@@ -23,7 +23,7 @@
 							<input type="password" name="" value="" placeholder="Vui lòng nhập mật khẩu của bạn">
 							<a href="forget.html" title="">Quên mật khẩu?</a>
 						</div>
-						<div id="login" class="col-lg-5 col-md-5 col-sm-5 col-12">
+						<div id="login-button" class="col-lg-5 col-md-5 col-sm-5 col-12">
 							<input class="btn btn-primary" type="submit" name="" value="Đăng nhập">
 							<p>Nếu bạn chưa có tài khoản <a href="register.html">Đăng ký ngay!</a></p>
 						</div>

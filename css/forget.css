@@ -2,15 +2,15 @@
 	margin: 0px;
 	padding: 0px;
 }
-main{
+#main-foget{
 	width: 70%;
 	margin: 0 auto;
 	margin-top: 20px;	
 }
-main >p{
+#main-foget >p{
 	font-size: 24px;
 }
-form{
+#main-foget form{
 	overflow: hidden;
 	background-color: #fff;
 	width: 100%;

@@ -14,7 +14,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<main>
+				<main id="main-forget">
 					<p>Bạn quên mật khẩu? Đừng lo TNT Studio sẽ giúp bạn</p>
 					<form style="padding: 30px;" class="col-lg-12 col-md-12 col-sm-12 col-12" action="forget_submit" method="post" accept-charset="utf-8">
 						<p>Nhập địa chỉ email của bạn dưới đây và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu của bạn.</p>

@@ -14,12 +14,12 @@
 	<section>
 		<div class="fix-container">
 			<div class="fix-row">
-				<main>
+				<main id="main-product">
 					<div id="product-top">
-						<div id="product-img" class="col-lg-4">
+						<div id="product-img" class="col-lg-4 col-md-4 col-ms-4 col-4">
 							<img src="img/products/iphone6-32gb.jpg" class="img-thumbnail">
 						</div>
-						<div id="product-name" class="col-lg-5">
+						<div id="product-name" class="col-lg-5 col-md-5 col-ms-5 col-5">
 							<div>
 								<h3>Iphone 6 gold 32GB</h3>
 								<p style="font-size: 12px;">Thương hiệu: <b style="color: #98DBF3;">Apple chính hãng</b></p>
@@ -38,7 +38,7 @@
 								<a href="#" title="">Hướng dẫn mua hàng</a>
 							</div>
 						</div>
-						<div id="address" class="col-lg-3">
+						<div id="address" class="col-lg-3 col-md-3 col-ms-3 col-3">
 							<div>
 								<p>Tùy chọn giao hàng:</p>
 								<div>
@@ -77,7 +77,7 @@
 						</div>
 					</div>
 					<div id="info-product">
-						<div id="chi-tiet" class="col-lg-10">
+						<div id="chi-tiet" class="col-lg-10 col-md-10 col-ms-10 col-12">
 							<div id="thong-tin-chi-tiet">
 								<h4>Mô tả sản phẩm Pin sạc dự phòng Xiaomi Power Bank Gen 2 10000mAh (Đen) - Hãng phân phối chính thức</h4>
 								<ul>
@@ -144,7 +144,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="quang-cao" class="col-lg-2">
+						<div id="quang-cao" class="col-lg-2 col-md-2 col-ms-2">
 							<p>Xem thêm</p>
 							<div>
 								<a href="#" title="">

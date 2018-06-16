@@ -66,9 +66,9 @@
 		<div class="fix-container">
 			<div class="fix-row">
 				<!-- aside -->
-				<aside>
+				<aside id="aside-product-list">
 					<!-- slide -->
-					<div id="slide-product" class="col-lg-12">
+					<div id="slide-product" class="col-lg-12 col-md-12 col-sm-12 col-12">
 						<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1140px;height:380px;overflow:hidden;visibility:hidden;">
 							<!-- Loading Screen -->
 							<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -117,17 +117,17 @@
 					<!-- end slide -->
 
 					<!-- banner -->
-					<div id="banner-product" class="col-lg-12">
-						<div class="banner-product-item col-lg-3">
+					<div id="banner-product" class="col-lg-12 col-md-12 col-sm-12">
+						<div class="banner-product-item col-lg-3 col-md-6 col-ms-6">
 							<a href="#" title=""><img class="img-thumbnail" src="img/products/banner-product1.png" alt=""></a>
 						</div>
-						<div class="banner-product-item col-lg-3">
+						<div class="banner-product-item col-lg-3 col-md-6 col-ms-6">
 							<a href="#" title=""><img class="img-thumbnail" src="img/products/banner-product2.png" alt=""></a>
 						</div>
-						<div class="banner-product-item col-lg-3">
+						<div class="banner-product-item col-lg-3 col-md-6 col-ms-6">
 							<a href="#" title=""><img class="img-thumbnail" src="img/products/banner-product3.png" alt=""></a>
 						</div>
-						<div class="banner-product-item col-lg-3">
+						<div class="banner-product-item col-lg-3 col-md-6 col-ms-6">
 							<a href="#" title=""><img class="img-thumbnail" src="img/products/banner-product4.png" alt=""></a>
 						</div>
 					</div>
@@ -136,8 +136,8 @@
 				<!-- end-aside -->
 
 				<!-- main -->
-				<main>
-					<div id="bar-OP" class="col-lg-2">
+				<main id="main-product-list">
+					<div id="bar-OP" class="col-lg-2 col-md-2 col-ms-2 col-2">
 						<div>
 							<p style="background: none; color: #ff9600;">Danh mục sản phẩm</p>
 							<p>Điện thoại di động</p>
@@ -176,7 +176,7 @@
 							<a href="#" title=""><img class="img-thumbnail" src="img/products/" alt=""></a>
 						</div>
 					</div>
-					<div id="product-OP" class="col-lg-10">
+					<div id="product-OP" class="col-lg-10 col-md-10 col-ms-10 col-10">
 						<div id="product-values-OP">
 							<div>
 								<h3>Điện thoại di động</h3>
@@ -312,7 +312,7 @@
 							
 						</div>
 					</div>
-					<div id="info-OP">
+					<div id="info-OP" class="col-lg-12 col-md-12 col-ms-12 col-12">
 						<div>
 							<p>Những điều cần chú ý khi lựa chọn hệ thống giải trí tại gia</p>
 							<ul>

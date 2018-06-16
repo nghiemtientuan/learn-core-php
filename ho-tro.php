@@ -13,8 +13,8 @@
 	<section>
 		<div class="fix-container">
 			<div class="fix-row">
-				<main>
-					<div id="danh-muc" class="col-lg-3 col-md-3">
+				<main id="main-hotro">
+					<div id="danh-muc" class="col-lg-3 col-md-3 col-ms-3 col-3">
 						<ul>
 							<li><a href="#" title="">Giới thiệu công ty</a><hr></li>
 							<li><a href="#" title="">Câu hỏi thường gặp</a><hr></li>
@@ -31,7 +31,7 @@
 							<li><a href="#" title="">Tư vấn</a><hr></li>
 						</ul>
 					</div>
-					<div id="thong-tin" class="col-lg-9 col-md-9">
+					<div id="thong-tin" class="col-lg-9 col-md-9 col-ms-9 col-9">
 						
 					</div>
 				</main>

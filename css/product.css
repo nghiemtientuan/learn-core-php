@@ -23,21 +23,21 @@ body{
 }
 /*main*/
 /*product-top*/
-#product-top{
+#main-product #product-top{
   margin-top: 20px;
   background-color: #fff;
   margin-bottom: 15px;
   overflow: hidden;
 }
 /*product-img*/
-#product-img, #product-name, #address, #chi-tiet, #quang-cao{
+#main-product #product-img, #product-name, #address, #chi-tiet, #quang-cao{
   float: left;
 }
-#product-img{
+#main-product #product-img{
   padding: 0px;
   padding-right: 15px;
 }
-#product-img img{
+#main-product #product-img img{
   padding: 0px;
   background-color: #fff;
   border: none;
@@ -46,54 +46,54 @@ body{
 }
 /*end product-img*/
 /*product-name*/
-#product-name{
+#main-product #product-name{
   background-color: #fff;
   padding: 0px;
 }
-#product-name div p{
+#main-product #product-name div p{
   padding: 0px;
   margin: 0px;
 }
-#product-name button{
+#main-product #product-name button{
   margin-top: 20px;
 }
 /*end product-name*/
 /*address*/
-#address{
+#main-product #address{
   padding: 0px;
   padding-left: 15px;
   font-size: 14px;
   background-color: #FAFAFA;
 }
-#address >div >p{
+#main-product #address >div >p{
   color: #A4A6A4;
   padding: 0px;
   margin-bottom: 5px;
 }
-#address >div >div{
+#main-product #address >div >div{
   clear: both;
   overflow: hidden;
 }
-#address >div >div >img{
+#main-product #address >div >div >img{
   float: left;
 }
-#address >div >div input{
+#main-product #address >div >div input{
   border: none;
   border-bottom: 2px solid #ccc;
 }
-#address >div >div >p{
+#main-product #address >div >div >p{
   padding: 0px;
   margin-left: 10px;
   float: left;
 }
-#address img{
+#main-product #address img{
   width: 30px;
   padding: 0px;
   background-color: #FAFAFA;
   border: none;
   border-radius: 0rem;
 }
-#address input{
+#main-product #address input{
   margin-left: 10px;
   background-color: #FAFAFA;
 }
@@ -102,89 +102,89 @@ body{
 
 /*info-product*/
 /*chi-tiet*/
-#chi-tiet{
+#main-product #chi-tiet{
   padding-left: 0px;
 }
 /*thong-tin-chi-tiet*/
-#thong-tin-chi-tiet{
+#main-product #thong-tin-chi-tiet{
   background-color: #fff;
 }
-#thong-tin-chi-tiet h4{
+#main-product #thong-tin-chi-tiet h4{
   background-color: #FAFAFA;
   padding: 5px 20px;
   margin: 0px;
 }
-#thong-tin-chi-tiet ul{
+#main-product #thong-tin-chi-tiet ul{
   margin-bottom: 0px;
   margin-left: 50px;
 }
-#thong-tin-chi-tiet img, p{
+#main-product #thong-tin-chi-tiet img, p{
   padding: 0px 15px;
 }
-#thong-tin-chi-tiet table{
+#main-product #thong-tin-chi-tiet table{
   margin-left: 15px;
 }
-#thong-tin-chi-tiet table tr td{
+#main-product #thong-tin-chi-tiet table tr td{
   padding: 0 20px;
 }
 /*end thong-tin-chi-tiet*/
 
 /*comments*/
-#comments{
+#main-product #comments{
   margin-top: 5px;
   background-color: #fff;
 }
-#comments >p{
+#main-product #comments >p{
   font-size: 20px;
   font-weight: bold;
   background-color: #FAFAFA;
 }
-.comment-item p{
+#main-product .comment-item p{
   margin: 0px;
 }
-#comments form{
+#main-product #comments form{
   margin: 0 15px;
 }
-#comments form textarea{
+#main-product #comments form textarea{
   width: 100%;
   height: 100px;
 }
 /*end comments*/
 /*end chi-tiet*/
 /*quang-cao*/
-#quang-cao{
+#main-product #quang-cao{
   padding: 0px;
   background-color: #fff;
 }
-#quang-cao >p{
+#main-product #quang-cao >p{
   margin-bottom: 0px;
   text-align:center;
   background-color: #FAFAFA;
 }
-#quang-cao div{
+#main-product #quang-cao div{
   border: 1px solid #fff;
 }
-#quang-cao div:hover{
+#main-product #quang-cao div:hover{
   border: 1px solid #ccc;
 }
-#quang-cao div a{
+#main-product #quang-cao div a{
   color: #000;
 }
-#quang-cao div a:hover{
+#main-product #quang-cao div a:hover{
   text-decoration: none;
   color: #ccc;
 }
-#quang-cao div a p{
+#main-product #quang-cao div a p{
   text-align: center;
   padding-left: 5px;
   margin: 0px;
 }
-#quang-cao div a p:last-child{
+#main-product #quang-cao div a p:last-child{
   color: #ff9600;
   font-weight: bold;
   margin-bottom: 30px;
 }
-#quang-cao div img{
+#main-product #quang-cao div img{
   padding: 0px;
   background-color: #fff;
   border: none;
@@ -216,5 +216,10 @@ body{
 @media (min-width: 1200px) {
   .fix-container {
     max-width: 1200px;
+  }
+}
+@media (max-width: 576px){
+  #quang-cao{
+    display: none;
   }
 }

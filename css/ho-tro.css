@@ -22,29 +22,29 @@ body{
   margin-left: 0px;
 }
 /*main*/
-main{
+#main-hotro{
 	margin-top: 20px;
 	width: 100%;
 }
 /*danh-muc*/
-#danh-muc{
+#main-hotro #danh-muc{
 	float: left;
 	padding-left: 0px;
 	padding-right: 30px;
 }
-#danh-muc li{
+#main-hotro #danh-muc li{
 	list-style: none;
 }
-#danh-muc a{
+#main-hotro #danh-muc a{
 	color: #000;
 }
-#danh-muc a:hover{
+#main-hotro #danh-muc a:hover{
 	text-decoration: none;
 	color: #09FF77;
 }
 /*end danh-muc*/
 /*thong-tin*/
-#thong-tin{
+#main-hotro #thong-tin{
 	float: left;
 }
 /*end thong-tin*/

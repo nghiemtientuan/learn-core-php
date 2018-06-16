@@ -2,42 +2,42 @@
 	margin: 0px;
 	padding: 0px;
 }
-main{
+#main-register{
 	width: 70%;
 	margin: 0 auto;
 	margin-top: 20px;	
 }
-main >p{
+#main-register >p{
 	font-size: 24px;
 }
-form{
+#main-register form{
 	overflow: hidden;
 	background-color: #fff;
 	width: 100%;
 	padding: 20px;
 	font-size: 14px;
 }
-#col-1{
+#main-register #col-1{
 	float: left;
 }
-#col-1 p{
+#main-register #col-1 p{
 	margin: 0px;
 }
-#col-1 input{
+#main-register #col-1 input{
 	width: 100%;
 	margin-bottom: 20px;
 }
-#col-1 select{
+#main-register #col-1 select{
 	margin-top: 5px;
 	margin-right: 5px;
 }
-#col-2{
+#main-register #col-2{
 	float: left;
 }
-#col-2 p{
+#main-register #col-2 p{
 	margin: 0px;
 }
-#col-2 input{
+#main-register #col-2 input{
 	width: 100%;
 	margin-bottom: 15px;
 }
