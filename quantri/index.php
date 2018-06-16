@@ -1,3 +1,31 @@
+<?php
+ob_start();
+session_start();
+include_once 'ketnoi.php';
+
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $mk = $_POST['mk'];
+    if(isset($email) && isset($mk)){
+        $sql = "SELECT * FROM thanh_vien WHERE mail='$email' AND mat_khau='$mk'";
+        $query = mysqli_query($conn, $sql);
+        $rows = mysqli_num_rows($query);
+        if($rows == 0) {
+            echo '<center class="alert alert-danger">Tài khoản không tồn tại hoặc bạn không có quyền truy cập</center>';
+        }else {
+            $_SESSION['email'] = $email;
+            $_SESSION['mk'] = $mk;
+            header('location: quantri.php');
+        }
+    }
+}
+
+//đã đăng nhập thì vào trang quantri
+if(isset($_SESSION['email'])){
+    header('location: quantri.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
