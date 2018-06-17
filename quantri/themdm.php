@@ -41,7 +41,6 @@ if(isset($_POST['submit'])){
                         </div>
                         <button type="submit" class="btn btn-primary" name="submit">Thêm mới</button>
                         <button type="reset" class="btn btn-default">Làm mới</button>
-
                 </div>
                 </form>
             </div>

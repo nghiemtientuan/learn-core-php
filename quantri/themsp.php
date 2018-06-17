@@ -47,7 +47,6 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-
 <div class="row">
     <ol class="breadcrumb">
         <li><a href="#">
@@ -142,17 +141,17 @@ if(isset($_POST['submit'])){
                         </div>
                         <div class="form-group">
                             <label>Thông tin chi tiết sản phẩm</label>
-                            <textarea class="form-control" rows="3" name="chi_tiet_sp"></textarea>
+                            <textarea id="chi_tiet_sp" class="form-control" rows="3" name="chi_tiet_sp"></textarea>
+
                         </div>
-
-
                     </div>
 
                     <button type="submit" class="btn btn-primary" name="submit">Thêm mới</button>
                     <button type="reset" class="btn btn-default" name="reset">Làm mới</button>
-
-
                 </form>
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'chi_tiet_sp');
+                </script>
             </div>
         </div>
     </div><!-- /.col-->

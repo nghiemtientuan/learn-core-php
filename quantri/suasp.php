@@ -142,6 +142,9 @@ tinh_trang='$tinh_trang',khuyen_mai='$khuyen_mai',chi_tiet='$chi_tiet_sp' WHERE 
                         <div class="form-group">
                             <label>Thông tin chi tiết sản phẩm</label>
                             <textarea class="form-control" rows="3" name="chi_tiet_sp"><?php if(isset($_POST['chi_tiet_sp'])){echo $_POST['chi_tiet_sp'];}else{echo $row['chi_tiet'];}?></textarea>
+                            <script type="text/javascript">
+                                CKEDITOR.replace('chi_tiet_sp');
+                            </script>
                         </div>
 
 

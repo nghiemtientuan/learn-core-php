@@ -1,8 +1,37 @@
 <?php
+//phân trang
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+}else{
+    $page = 1;
+}
+$rowsPerPage = 10;
+$perRow = $page*$rowsPerPage - $rowsPerPage;
+$sql_page = "SELECT * FROM  sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty ORDER BY id_sp DESC LIMIT $perRow,$rowsPerPage";
+$query_page = mysqli_query($conn, $sql_page);
+$totalRows = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM sp"));//tổng số bản ghi
+$totalPages = ceil($totalRows/$rowsPerPage);//Làm tròn số trang lên
+
+
+$listPage="";
+for($i=1;$i<=$totalPages;$i++){
+    if($page==$i){
+        $listPage.='<li class="active"><a href="quantri.php?page_layout=danhsachsp&page='.$i.'">'.$i.'</a></li>';
+    }else{
+        $listPage.='<li><a href="quantri.php?page_layout=danhsachsp&page='.$i.'">'.$i.'</a></li>';
+    }
+}
+?>
+<?php
 $sql = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty ORDER BY id_sp ASC";
 $query = mysqli_query($conn, $sql);
 ?>
-
+<script>
+    function xoaSanPham(){
+        var conf = confirm("Bạn có chắc chắn muốn xóa sản phẩm này hay không?");
+        return conf;
+    }
+</script>
 <div class="row">
     <ol class="breadcrumb">
         <li><a href="#">
@@ -61,7 +90,7 @@ $query = mysqli_query($conn, $sql);
                         </td>
 
                         <td>
-                            <a href="#"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
+                            <a onclick="return xoaSanPham();" href="xoasp.php?id_sp=<?php echo $row['id_sp'];?>"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
                                                 xlink:href="#stroked-cancel"/></svg></span></a>
                         </td>
                     </tr>
@@ -71,15 +100,9 @@ $query = mysqli_query($conn, $sql);
                     </tbody>
                 </table>
                 <ul class="pagination" style="float: right;">
-                    <li><a href="#"><<</a></li>
-                    <li><a href="#"><</a></li>
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">></a></li>
-                    <li><a href="#">>></a></li>
+                    <?php
+                    echo $listPage;
+                    ?>
                 </ul>
             </div>
         </div>

@@ -17,6 +17,8 @@ if(!isset($_SESSION['email'])){
         <link href="../css/datepicker3.css" rel="stylesheet">
         <link href="../css/styles.css" rel="stylesheet">
         <script src="../js/lumino.glyphs.js"></script>
+        <!--gọi file ckeditor-công cụ soạn thảo văn bản-->
+        <script type="text/javascript" src="ckeditor/ckeditor.js"> </script>
     </head>
 
     <body>
