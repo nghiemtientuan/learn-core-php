@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Product</title>
 	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="css/product.css">
+	<link rel="stylesheet" href="css/web.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

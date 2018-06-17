@@ -462,7 +462,7 @@
 	<!-- end header -->
 	
 	<!-- section -->
-	<section id="section">
+	<section id="section-index">
 		<div class="fix-container">
 			<div class="fix-row">
 				<!-- aside -->

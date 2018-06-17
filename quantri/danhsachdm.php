@@ -1,8 +1,32 @@
 <?php
-$sql = "SELECT * FROM  dm_sp ORDER BY id_dm ASC";
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+}else{
+    $page = 1;
+}
+$rowsPerPage = 5;
+$perRow = $page*$rowsPerPage - $rowsPerPage;
+$sql = "SELECT * FROM  dm_sp ORDER BY id_dm ASC LIMIT $perRow,$rowsPerPage";
 $query = mysqli_query($conn, $sql);
-?>
+$totalRows = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM dm_sp"));//tổng số bản ghi
+$totalPages = ceil($totalRows/$rowsPerPage);//Làm tròn số trang lên
 
+
+$listPage="";
+for($i=1;$i<=$totalPages;$i++){
+    if($page==$i){
+        $listPage.='<li class="active"><a href="quantri.php?page_layout=danhsachdm&page='.$i.'">'.$i.'</a></li>';
+    }else{
+        $listPage.='<li><a href="quantri.php?page_layout=danhsachdm&page='.$i.'">'.$i.'</a></li>';
+    }
+}
+?>
+<script>
+    function xoaDanhMuc(){
+        var conf = confirm("Bạn có chắc chắn muốn xóa danh mục này hay không?");
+        return conf;
+    }
+</script>
 <div class="row">
     <ol class="breadcrumb">
         <li><a href="#">
@@ -47,12 +71,12 @@ $query = mysqli_query($conn, $sql);
                         <td data-checkbox="true"><?php echo $row['id_dm'];?></td>
                         <td data-checkbox="true"><a href="quantri.php?page_layout=danhsachdmc"><?php echo $row['ten_dm'];?></a></td>
                         <td>
-                            <a href="quantri.php?page_layout=suadm"><span><svg class="glyph stroked brush" style="width: 20px;height: 20px;"><use
+                            <a href="quantri.php?page_layout=suadm&id_dm=<?php echo $row['id_dm'];?>"><span><svg class="glyph stroked brush" style="width: 20px;height: 20px;"><use
                                                 xlink:href="#stroked-brush"/></svg></span></a>
                         </td>
 
                         <td>
-                            <a href="#"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
+                            <a onclick="return xoaDanhMuc();" href="xoadm.php?id_dm=<?php echo $row['id_dm'];?>"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
                                                 xlink:href="#stroked-cancel"/></svg></span></a>
                         </td>
                     </tr>
@@ -63,15 +87,9 @@ $query = mysqli_query($conn, $sql);
                     </tbody>
                 </table>
                 <ul class="pagination" style="float: right;">
-                    <li><a href="#"><<</a></li>
-                    <li><a href="#"><</a></li>
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">></a></li>
-                    <li><a href="#">>></a></li>
+                    <?php
+                        echo $listPage;
+                    ?>
                 </ul>
             </div>
         </div>

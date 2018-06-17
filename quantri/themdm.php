@@ -1,3 +1,14 @@
+<?php
+if(isset($_POST['submit'])){
+    $ten_dm = $_POST['ten_dm'];
+    if(isset($ten_dm)){
+        $sql = "INSERT INTO dm_sp(ten_dm) VALUES ('$ten_dm')";
+        $query = mysqli_query($conn, $sql);
+        header('location: quantri.php?page_layout=danhsachdm');
+    }
+}
+?>
+
 <div class="row">
     <ol class="breadcrumb">
         <li><a href="#">

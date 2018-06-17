@@ -1,3 +1,18 @@
+<?php
+$id_dm = $_GET['id_dm'];
+$sql = "SELECT * FROM dm_sp WHERE id_dm=$id_dm";
+$query = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($query);
+if(isset($_POST['submit'])){
+    $ten_dm = $_POST['ten_dm'];
+    if(isset($ten_dm)){
+        $sql = "UPDATE dm_sp SET ten_dm='$ten_dm' WHERE id_dm=$id_dm";
+        $query = mysqli_query($conn, $sql);
+        header('location: quantri.php?page_layout=danhsachdm');
+    }
+}
+?>
+
 <div class="row">
     <ol class="breadcrumb">
         <li><a href="#">
@@ -26,7 +41,7 @@
 
                         <div class="form-group">
                             <label>Tên danh mục</label>
-                            <input class="form-control" type="text" name="ten_dm" value="iPhone" required="">
+                            <input class="form-control" type="text" name="ten_dm" value="<?php echo $row['ten_dm'];?>" required="">
                         </div>
                         <button type="submit" class="btn btn-primary" name="submit">Sửa</button>
                         <button type="reset" class="btn btn-default">Làm mới</button>

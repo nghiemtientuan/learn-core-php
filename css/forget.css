@@ -2,17 +2,3 @@
 	margin: 0px;
 	padding: 0px;
 }
-#main-foget{
-	width: 70%;
-	margin: 0 auto;
-	margin-top: 20px;	
-}
-#main-foget >p{
-	font-size: 24px;
-}
-#main-foget form{
-	overflow: hidden;
-	background-color: #fff;
-	width: 100%;
-	font-size: 14px;
-}

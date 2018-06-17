@@ -1,54 +1,5 @@
-*{
-	margin: 0px;
-	padding: 0px
-}
-body{
-	font-family: Arial;
-}
-.fix-container{
-	width: 100%;
-  	padding-right: 0px;
-  	padding-left: 0px;
-  	margin-right: auto;
-  	margin-left: auto;
-}
-.fix-row{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: 0px;
-  margin-left: 0px;
-}
-/*main*/
-#main-hotro{
-	margin-top: 20px;
-	width: 100%;
-}
-/*danh-muc*/
-#main-hotro #danh-muc{
-	float: left;
-	padding-left: 0px;
-	padding-right: 30px;
-}
-#main-hotro #danh-muc li{
-	list-style: none;
-}
-#main-hotro #danh-muc a{
-	color: #000;
-}
-#main-hotro #danh-muc a:hover{
-	text-decoration: none;
-	color: #09FF77;
-}
-/*end danh-muc*/
-/*thong-tin*/
-#main-hotro #thong-tin{
-	float: left;
-}
-/*end thong-tin*/
-/*end main*/
+
+
 
 @media (min-width: 576px) {
   .fix-container {
