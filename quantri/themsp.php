@@ -141,17 +141,22 @@ if(isset($_POST['submit'])){
                         </div>
                         <div class="form-group">
                             <label>Thông tin chi tiết sản phẩm</label>
-                            <textarea id="chi_tiet_sp" class="form-control" rows="3" name="chi_tiet_sp"></textarea>
-
+                            <textarea class="form-control" rows="3" name="chi_tiet_sp"></textarea>
+                            <script type="text/javascript">
+                                CKEDITOR.replace( 'chi_tiet_sp',{
+                                    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+                                    filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+                                    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                                    filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+                                });
+                            </script>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary" name="submit">Thêm mới</button>
                     <button type="reset" class="btn btn-default" name="reset">Làm mới</button>
                 </form>
-                <script type="text/javascript">
-                    CKEDITOR.replace( 'chi_tiet_sp');
-                </script>
+
             </div>
         </div>
     </div><!-- /.col-->

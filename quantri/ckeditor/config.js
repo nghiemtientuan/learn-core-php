@@ -9,7 +9,9 @@ CKEDITOR.editorConfig = function (config) {
     // config.uiColor = '#AADC6E';       
 
     config.filebrowserBrowseUrl= 'http://localhost/tntstudio/quantri/ckeditor/ckfinder/ckfinder.html';
-    config.filebrowserImageBrowseUrl= 'http://localhost/tntstudio/quantri/ckeditor/ckfinder/ckfinder.html?type=Images';
-    config.filebrowserUploadUrl= 'http://localhost/tntstudio/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
-    config.filebrowserImageUploadUrl= 'http://localhost/tntstudio/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+        config.filebrowserImageBrowseUrl= 'http://localhost/tntstudio/quantri/ckeditor/ckfinder/ckfinder.html?type=Images';
+        config.filebrowserUploadUrl=
+    'http://localhost/tntstudio/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&currentFolder=/archive/';
+        config.filebrowserImageUploadUrl=
+    'http://localhost/tntstudio/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&currentFolder=/cars/';
 };
