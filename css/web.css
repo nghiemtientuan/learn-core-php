@@ -154,23 +154,12 @@ body{
 	width: 100%;
 	z-index: 1;/*hiển thị trên slide-cần phải có position: relative*/
 }
-#header #menu-link{
+#header .menu-link{
 	float: left;
 	border-right: 1px solid #ccc;
 }
-#header #menu-link p{
-	text-align: center;
-	margin: 0px;
-	font-size: 20px;
-	color: #FF9600;
-	font-weight: bold;
-}
-#header .menu-child-list{
+#header .menu-child-list li{
 	float: left;
-	border-top: 1px solid #ccc;
-}
-#header .menu-child-list ul{
-	list-style: none;
 }
 #header .menu-child-list a{
 	color: #000;
@@ -178,16 +167,6 @@ body{
 #header .menu-child-list a:hover{
 	color: #189EFF;
 	text-decoration: none;
-}
-#header #menu-child-img{
-	padding: 0px;
-	float: left;
-}
-#header #menu-child-img img{
-	border: none;
-	background: none;
-	padding: 0px;
-  	border-radius: 0px;
 }
 /*end menu-child*/
 /*end header-b*/
