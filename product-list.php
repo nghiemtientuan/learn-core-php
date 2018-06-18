@@ -1,3 +1,27 @@
+<?php
+$id_dmc = $_GET['id_dmc'];
+
+$sql_dmc = "SELECT * FROM dmc_sp WHERE dmc_sp.id_dmc='$id_dmc'";
+$query_dmc = mysqli_query($conn, $sql_dmc);
+$row_dmc = mysqli_fetch_array($query_dmc);
+$id_dm = $row_dmc['id_dm'];
+
+$sql_dm = "SELECT * FROM dm_sp WHERE id_dm='$id_dm'";
+$query_dm = mysqli_query($conn, $sql_dm);
+$row_dm = mysqli_fetch_array($query_dm);
+
+$sql_cdmc = "SELECT * FROM dmc_sp WHERE dmc_sp.id_dm='$id_dm'";
+$query_cdmc = mysqli_query($conn, $sql_cdmc);
+
+$sql_sp = "SELECT * FROM sp,dmc_sp WHERE sp.id_dm=dmc_sp.id_dmc AND dmc_sp.id_dmc='$id_dmc' ORDER BY id_sp ASC";
+$query_sp = mysqli_query($conn, $sql_sp);
+
+if(isset($_POST['them_cart'])){
+    $_SESSION['sp_mua'] = $_SESSION['sp_mua'].','.$id_sp;
+    header("location: index.php?page_layout=cart");
+}
+?>
+
 <!-- aside -->
 <aside id="aside-product-list">
     <!-- slide -->
@@ -79,15 +103,15 @@
     <div id="bar-OP" class="col-lg-2 col-md-2 col-ms-2 col-2">
         <div>
             <p style="background: none; color: #ff9600;">Danh mục sản phẩm</p>
-            <p>Điện thoại di động</p>
+            <p><?php echo $row_dm['ten_dm'];?></p>
             <ul>
-                <li><a href="#" title="">Samsung</a></li>
-                <li><a href="#" title="">iPhone</a></li>
-                <li><a href="#" title="">Oppo</a></li>
-                <li><a href="#" title="">Nokia</a></li>
-                <li><a href="#" title="">Huwei</a></li>
-                <li><a href="#" title="">BlackBerry</a></li>
-                <li><a href="#" title="">Bphone</a></li>
+                <?php
+                while ($row_cdmc = mysqli_fetch_array($query_cdmc)){
+                ?>
+                <li><a href="index.php?page_layout=product-list&id_dmc=<?php echo $row_cdmc['id_dmc'];?>" title=""><?php echo $row_cdmc['ten_dmc'];?></a></li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
         <div>
@@ -118,146 +142,33 @@
     <div id="product-OP" class="col-lg-10 col-md-10 col-ms-10 col-10">
         <div id="product-values-OP">
             <div>
-                <h3>Điện thoại di động</h3>
-                <p>100 sản phẩm tìm thấy</p>
+                <h3><?php echo $row_dmc['ten_dmc'];?></h3>
+                <p><?php echo $row_num=mysqli_num_rows($query_sp)?> sản phẩm tìm thấy</p>
             </div>
             <div>
                 <p>Sắp xếp theo:</p>
             </div>
         </div>
         <div id="product-list-OP">
+            <?php
+            while ($row_sp=mysqli_fetch_array($query_sp)){
+            ?>
             <div class="product-item-OP col-lg-3" style="padding: 0px;">
                 <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
+                    <img class="img-thumbnail" src="img/products/<?php $row_sp['anh_sp'];?>">
+                    <h4><?php $row_sp['ten_sp'];?></h4>
+                    <s>2.500.000</s><b> <?php $row_sp['gia'];?></b>
                     <p>-40%</p>
                 </a>
                 <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <form method="post">
+                        <input name="them_cart" type="submit" class="btn btn-primary" value="Thêm vào giỏ hàng">
+                    </form>
                 </div>
             </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
-            <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/iphone4.jpg">
-                    <h4>iPhone 4 black- 32GB</h4>
-                    <s>2.500.000</s><b> 1.750.000</b>
-                    <p>-40%</p>
-                </a>
-                <div>
-                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
         <div id="pages">
 

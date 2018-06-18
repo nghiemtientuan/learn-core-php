@@ -1,15 +1,26 @@
+<?php
+$mua_hang = $_SESSION['sp_mua'];
+$cac_san_pham = explode(",",$mua_hang);
+?>
+
+
 <main id="main-cart">
     <div id="product-list" class="col-lg-8 col-md-8 col-ms-8 col-12">
         <p>Giỏ hàng của bạn (<b style="text-transform: none; font-size: 14px;">2 sản phẩm</b>)</p>
         <hr>
+        <?php
+        foreach ($cac_san_pham as $key => $value){
+            $sql_sp = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty AND id_sp='$value'";
+            $query_sp = mysqli_query($conn, $sql_sp);
+            $row_sp = mysqli_fetch_array($query_sp);
+        ?>
         <div class="product">
             <table>
                 <tbody>
                 <tr>
-                    <td style="width: 10%;"><img class="img-thumbnail" src="img/products/iphone4.jpg" alt=""></td>
-                    <td style="width: 40%;"><p>Iphone 4 black 32GB</p></td>
-                    <td style="width: 25%;"><p style="color: #ff9600;font-weight: bold;margin: 0px;font-size: 20px;">
-                            2.500.000 VNĐ</p><s style="font-size: 13px;">3.600.000</s></td>
+                    <td style="width: 10%;"><img class="img-thumbnail" src="img/products/<?php echo $row_sp['anh_sp'];?>" alt=""></td>
+                    <td style="width: 40%;"><p><?php echo $row_sp['ten_sp'];?></p></td>
+                    <td style="width: 25%;"><p style="color: #ff9600;font-weight: bold;margin: 0px;font-size: 20px;"><?php echo $row_sp['gia'];?></p><s style="font-size: 13px;">3.600.000</s></td>
                     <td style="width: 20%;"><p style="font-size: 12px;">Số lượng: </p></td>
                 </tr>
                 </tbody>
@@ -17,21 +28,9 @@
             <button class="btn btn-primary">Xóa</button>
             <hr>
         </div>
-        <div class="product">
-            <table>
-                <tbody>
-                <tr>
-                    <td style="width: 10%;"><img class="img-thumbnail" src="img/products/iphone4.jpg" alt=""></td>
-                    <td style="width: 40%;"><p>Iphone 4 black 32GB</p></td>
-                    <td style="width: 25%;"><p style="color: #ff9600;font-weight: bold;margin: 0px;font-size: 20px;">
-                            2.500.000 VNĐ</p><s style="font-size: 13px;">3.600.000</s></td>
-                    <td style="width: 20%;"><p style="font-size: 12px;">Số lượng: </p></td>
-                </tr>
-                </tbody>
-            </table>
-            <button class="btn btn-primary">Xóa</button>
-            <hr>
-        </div>
+        <?php
+        }
+        ?>
     </div>
     <div id="pay" class="col-lg-4 col-md-4 col-ms-4 col-12">
         <div>

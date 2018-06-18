@@ -12,8 +12,9 @@ if(isset($_POST['submit'])){
         }else {
             $rows = mysqli_fetch_array($query);
             $_SESSION['ten'] = $rows['ho_ten'];
-            $_SESSION['email'] = $email;
-            $_SESSION['mk'] = $mk;
+            $_SESSION['sp_mua']='';
+            $_SESSION['email_khach'] = $email;
+            $_SESSION['mk_khach'] = $mk;
             header('location: index.php');
         }
     }

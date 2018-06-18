@@ -175,7 +175,7 @@ $query_dm = mysqli_query($conn, $sql_dm);
                                                  ?>
                                                     <li style="border:none;float:left;"
                                                         class="menu-child-list col-lg-4 col-md-4 col-ms-6 col-12"><a
-                                                                href="#" title=""><?php echo $row_dmc['ten_dmc'];?></a></li>
+                                                                href="index.php?page_layout=product-list&id_dmc=<?php echo $row_dmc['id_dmc'];?>" title=""><?php echo $row_dmc['ten_dmc'];?></a></li>
                                                  <?php
                                                 }
                                                 ?>

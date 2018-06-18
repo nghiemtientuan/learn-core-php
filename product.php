@@ -1,3 +1,16 @@
+<?php
+$id_sp = $_GET['id_sp'];
+$sql_sp = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty AND id_sp='$id_sp'";
+$query_sp = mysqli_query($conn, $sql_sp);
+$row_sp = mysqli_fetch_array($query_sp);
+if(isset($_POST['them_cart'])){
+    $_SESSION['sp_mua'] = $_SESSION['sp_mua'].','.$id_sp;
+    header("location: index.php?page_layout=cart");
+}
+?>
+
+
+
 <div id="main-product">
     <div id="product-top">
         <div id="product-img" class="col-lg-4 col-md-4 col-ms-4 col-4">
@@ -5,21 +18,23 @@
         </div>
         <div id="product-name" class="col-lg-5 col-md-5 col-ms-5 col-5">
             <div>
-                <h3>Iphone 6 gold 32GB</h3>
-                <p style="font-size: 12px;">Thương hiệu: <b style="color: #98DBF3;">Apple chính hãng</b></p>
+                <h3><?php echo $row_sp['ten_sp'];?></h3>
+                <p style="font-size: 12px;">Thương hiệu: <b style="color: #98DBF3;"><?php echo $row_sp['ten_cty'].' chính hãng';?></b></p>
             </div>
             <hr>
             <div>
                 <s>9.190.000</s>
-                <b style="font-size: 24px;color: #ff9600;">7.000.000</b>
+                <b style="font-size: 24px;color: #ff9600;"><?php echo $row_sp['gia'];?></b>
                 <br>
                 <p>-20%</p>
                 <hr>
                 <div>
                     <p>Số lượng: </p>
                 </div>
-                <button style="width: 100%; font-size:20px" class="btn btn-primary">Thêm vào giỏ hàng</button>
-                </br>
+                <form method="post" accept-charset="utf-8">
+                    <input name="them_cart" type="submit" style="width: 100%; font-size:20px" class="btn btn-primary" value="Thêm vào giỏ hàng">
+                </form>
+                <br>
                 <a href="#" title="">Hướng dẫn mua hàng</a>
             </div>
         </div>
@@ -51,42 +66,25 @@
                 </div>
                 <div>
                     <img class="img-thumbnail" src="img/products/icon-protect.png" alt="">
-                    <p>Bằng hóa đơn mua hàng 12 tháng</p>
+                    <p>Bằng hóa đơn mua hàng <?php echo $row_sp['bao_hanh'];?></p>
                 </div>
                 <hr>
             </div>
             <div>
                 <p>Hàng chính hãng</p>
-                <b>Xaomi</b>
+                <b><?php echo $row_sp['ten_cty'];?></b>
             </div>
         </div>
     </div>
     <div id="info-product">
         <div id="chi-tiet" class="col-lg-10 col-md-10 col-ms-10 col-12">
             <div id="thong-tin-chi-tiet">
-                <h4>Mô tả sản phẩm Pin sạc dự phòng Xiaomi Power Bank Gen 2 10000mAh (Đen) - Hãng phân phối chính
+                <h4>Mô tả sản phẩm <?php echo $row_sp['ten_sp'];?> - Hãng phân phối chính
                     thức</h4>
-                <ul>
-                    <li>Đầu vào: Micro USB</li>
-                    <li>Đầu ra: USB-A</li>
-                    <li>Điện áp vào: 5.0V - 2.0A; 9V/12V - 18W</li>
-                    <li>Điện áp ra: 5.1V - 2.4A; 9V/12V - 15W MAX</li>
-                    <li>Thời gian sạc: 4.2 giờ (sạc 18 W), 6.2 giờ (sạc 10 W)</li>
-                </ul>
                 <hr>
-                <img src="img/products/iphone6-32gb.jpg">
-                <p>Kiểu pin: Lithium polymer
-                    Dung lượng: 3,85V/10000mah
-                    Kích thước: 130 * 71 * 14.1 mm
-                    Đóng gói: 1 Hộp , 1 pin , 1 dây cáp micro usb.
-                    Đầu vào: 5V-2.0A ; 9V/12V-18W
-                    Đầu ra: 5V-2.4A ; 9V/12V-15W ( công suất cực đại )
-                    Thời gian nạp lại: 5,5 tiếng với đầu vào 5V-2.0A và cáp tiêu chuẩn . 3,5 tiếng với sạc nhanh và cáp
-                    tiêu chuẩn
-                    Sử dụng: Tự động điều chỉnh dòng điện đầu ra ; tương thích tất cả thiết bị điện thoại, máy tính
-                    bảng.
+                <img src="img/products/<?php echo $row_sp['anh_sp'];?>">
+                <p><?php echo $row_sp['chi_tiet'];?>
                 </p>
-                <img src="img/products/iphone6-32gb.jpg">
                 <hr>
                 <table>
                     <thead>
@@ -97,21 +95,21 @@
                     <tbody>
                     <tr>
                         <td>Thương hiệu</td>
-                        <td>Xiaomi</td>
+                        <td><?php echo $row_sp['ten_cty'];?></td>
                         <td style="border-left: 1px solid #ccc;">Mã sản phẩm</td>
-                        <td>XI431ELAA351FIVNAMZ-5477243</td>
+                        <td><?php echo $row_sp['id_sp'];?></td>
                     </tr>
                     <tr>
-                        <td>Dòng sản phẩm</td>
-                        <td>gen2black</td>
-                        <td style="border-left: 1px solid #ccc;">Loại bảo hành</td>
-                        <td>Bằng Hóa đơn mua hàng</td>
+                        <td>Trạng thái</td>
+                        <td><?php echo $row_sp['trang_thai'];?></td>
+                        <td style="border-left: 1px solid #ccc;">Tình trạng</td>
+                        <td><?php echo $row_sp['tinh_trang'];?></td>
                     </tr>
                     <tr>
                         <td>Thời gian bảo hành</td>
-                        <td>12 tháng</td>
-                        <td style="border-left: 1px solid #ccc;">Bộ sản phẩm bao gồm</td>
-                        <td>1xSản phẩm</td>
+                        <td><?php echo $row_sp['bao_hanh'];?></td>
+                        <td style="border-left: 1px solid #ccc;">Khuyến mại</td>
+                        <td><?php echo $row_sp['khuyen_mai'];?></td>
                     </tr>
                     </tbody>
                 </table>
