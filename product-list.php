@@ -1,5 +1,9 @@
 <?php
-$id_dmc = $_GET['id_dmc'];
+if(isset($_GET['id_dmc'])){
+    $id_dmc = $_GET['id_dmc'];
+}else{
+    header('location: index.php');
+}
 
 $sql_dmc = "SELECT * FROM dmc_sp WHERE dmc_sp.id_dmc='$id_dmc'";
 $query_dmc = mysqli_query($conn, $sql_dmc);

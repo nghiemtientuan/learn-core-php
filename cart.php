@@ -1,18 +1,25 @@
 <?php
 $mua_hang = $_SESSION['sp_mua'];
 $cac_san_pham = explode(",",$mua_hang);
+$tong_tien=0;
+
+if(isset($_POST['thanh_toan'])){
+
+}
 ?>
 
 
 <main id="main-cart">
     <div id="product-list" class="col-lg-8 col-md-8 col-ms-8 col-12">
-        <p>Giỏ hàng của bạn (<b style="text-transform: none; font-size: 14px;">2 sản phẩm</b>)</p>
+        <p>Giỏ hàng của bạn (<b style="text-transform: none; font-size: 14px;"><?php echo sizeof($cac_san_pham);?> sản phẩm</b>)</p>
         <hr>
         <?php
         foreach ($cac_san_pham as $key => $value){
-            $sql_sp = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty AND id_sp='$value'";
-            $query_sp = mysqli_query($conn, $sql_sp);
-            $row_sp = mysqli_fetch_array($query_sp);
+            if($key !=0){
+                $sql_sp = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty AND id_sp='$value'";
+                $query_sp = mysqli_query($conn, $sql_sp);
+                $row_sp = mysqli_fetch_array($query_sp);
+                $tong_tien = $tong_tien + $row_sp['gia'];
         ?>
         <div class="product">
             <table>
@@ -25,11 +32,13 @@ $cac_san_pham = explode(",",$mua_hang);
                 </tr>
                 </tbody>
             </table>
-            <button class="btn btn-primary">Xóa</button>
+            <form method="post">
+                <input type="submit" name="xoa_sp" class="btn btn-primary" value="Xóa">
+            </form>
             <hr>
         </div>
         <?php
-        }
+        }}
         ?>
     </div>
     <div id="pay" class="col-lg-4 col-md-4 col-ms-4 col-12">
@@ -49,22 +58,25 @@ $cac_san_pham = explode(",",$mua_hang);
                 <tbody>
                 <tr>
                     <td style="width: 65%;">Tạm tính (1 sản phẩm)</td>
-                    <td style="text-align: right;width: 35%;">1.290.000 VNĐ</td>
+                    <td style="text-align: right;width: 35%;"><?php echo $tong_tien;?> VNĐ</td>
                 </tr>
                 <tr>
                     <td style="width: 65%;">Phí giao hàng</td>
-                    <td style="text-align: right;width: 35%;">40.000 VNĐ</td>
+                    <td style="text-align: right;width: 35%;">40.000 VNĐ<?php $tong_tien=$tong_tien+40000;?></td>
                 </tr>
                 <tr>
                     <td style="width: 65%;">Tổng cộng</td>
-                    <td style="text-align: right;width: 35%;color: #ff9600;font-weight: bold;">1.330.000 VNĐ</td>
+                    <td style="text-align: right;width: 35%;color: #ff9600;font-weight: bold;"><?php $tong_tien;?> VNĐ</td>
                 </tr>
                 </tbody>
             </table>
             <p style="font-size: 12px;">(Đã bao gồm thuế VAT)</p>
         </div>
         <div>
-            <button style="width: 100%;margin-bottom: 20px;" class="btn btn-primary">Tiến hành thanh toán</button>
+            <form method="post">
+                <input type="submit" name="thanh_toan" style="width: 100%;margin-bottom: 20px;" class="btn btn-primary" value="Tiến hành thanh toán">
+            </form>
+            <p>Nhận hàng rồi thanh toán</p>
         </div>
     </div>
 </main>

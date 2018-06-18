@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+$_SESSION['sp_mua']='';
 include_once 'quantri/ketnoi.php';
 
 $sql_dm = "SELECT * FROM dm_sp";
@@ -161,7 +162,7 @@ $query_dm = mysqli_query($conn, $sql_dm);
                                     $query_dmc = mysqli_query($conn, $sql_dmc);
                                 ?>
 								<li>
-									<a href="#">
+									<a href="index.php">
 										<img src="img/<?php echo $row_dm['anh_dm'];?>" class="img-thumbnail">
 										<p><?php echo $row_dm['ten_dm'];?></p>
 									</a>

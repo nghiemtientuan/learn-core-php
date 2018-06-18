@@ -14,6 +14,6 @@ if(isset($_SESSION['email'])&&isset($_SESSION['mk'])){
     $query = mysqli_query($conn, $sql);
     header('location: quantri.php?page_layout=danhsachsp');
 }else{
-    header("location: index.php");
+    header("location: ../index.php");
 }
 ?>

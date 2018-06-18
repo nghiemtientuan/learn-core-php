@@ -12,10 +12,13 @@ if(isset($_POST['submit'])){
         }else {
             $rows = mysqli_fetch_array($query);
             $_SESSION['ten'] = $rows['ho_ten'];
-            $_SESSION['sp_mua']='';
-            $_SESSION['email_khach'] = $email;
-            $_SESSION['mk_khach'] = $mk;
-            header('location: index.php');
+            $_SESSION['email'] = $email;
+            $_SESSION['mk'] = $mk;
+            if($rows['level']==0){
+                header('location: index.php');
+            }else if($rows['level']==1||$rows['level']==2){
+                header('location: quantri/quantri.php');
+            }
         }
     }
 }

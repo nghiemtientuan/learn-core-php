@@ -2,8 +2,16 @@
 ob_start();
 session_start();
 include_once 'ketnoi.php';
+
+$email = $_SESSION['email'];
+$mk = $_SESSION['mk'];
+$sql = "SELECT * FROM thanh_vien WHERE mail='$email' AND mat_khau='$mk'";
+$query = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($query);
+$level = $row['level'];
+
 if(!isset($_SESSION['email'])){
-    header('location: index.php');
+    header('location: ../index.php');
 }
 ?>
 
