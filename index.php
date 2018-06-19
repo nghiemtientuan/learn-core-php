@@ -297,7 +297,7 @@ $query_dm = mysqli_query($conn, $sql_dm);
 						<b style="color: #D0021B; text-transform: bold;">0123456789</b>
 						<a href="https://www.facebook.com/codetntweb/" title=""><img class="img-thumbnail" src="img/fb.png" alt=""></a>
 						<a href="#" title=""><img class="img-thumbnail" src="img/tw.png" alt=""></a>
-						<a href="#" title=""><img class="img-thumbnail" src="img/youtobe.png" alt=""></a>
+						<a href="https://www.youtube.com/channel/UCBkz7RnzvWzC5uDSdunC92Q?view_as=subscriber" title=""><img class="img-thumbnail" src="img/youtobe.png" alt=""></a>
 						<p>Hỗ trợ thanh toán:</p>
 						<div>
 							<img src="img/payment1.png" class="img-thumbnail">

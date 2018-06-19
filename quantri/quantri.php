@@ -121,10 +121,9 @@ if(!isset($_SESSION['email'])){
                     </a>
                 </li>
                 <li class="parent ">
-                    <a href="#">
+                    <a href="quantri.php?page_layout=danhsachbinhluan">
                         <span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked two messages"><use xlink:href="#stroked-two-messages"/></svg></span> Quản lý bình luận
                     </a>
-
                 </li>
                 <li class="parent ">
                     <a href="quantri.php?page_layout=danhsachquangcao">
@@ -136,10 +135,8 @@ if(!isset($_SESSION['email'])){
                                 <svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Thêm mới
                             </a>
                         </li>
-
                     </ul>			
                 </li>
-
                 <li role="presentation" class="divider"></li>
                 <li><a href="dangxuat.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Đăng xuất</a></li>
             </ul>
@@ -165,6 +162,9 @@ if(!isset($_SESSION['email'])){
                         break;
                     case "danhsachnv":
                         include_once 'danhsachnv.php';
+                        break;
+                    case "danhsachbinhluan":
+                        include_once 'danhsachbinhluan.php';
                         break;
                     case "suadm":
                         include_once 'suadm.php';

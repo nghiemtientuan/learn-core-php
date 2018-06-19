@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
     }
 
     if(isset($anh_quangcao)&&isset($loai_quangcao)){
-        move_uploaded_file($tmp_name,"'../img/.'$loai_quangcao.'/'.$anh_quangcao");
+        move_uploaded_file($tmp_name,'../img/'.$loai_quangcao.'/'.$anh_quangcao);
         $sql = "INSERT INTO quang_cao(loai_quangcao,anh_quangcao) VALUES('$loai_quangcao','$anh_quangcao')";
         $query = mysqli_query($conn, $sql);
         header('location: quantri.php?page_layout=danhsachquangcao');
