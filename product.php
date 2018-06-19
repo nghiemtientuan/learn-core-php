@@ -3,9 +3,26 @@ $id_sp = $_GET['id_sp'];
 $sql_sp = "SELECT * FROM sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty AND id_sp='$id_sp'";
 $query_sp = mysqli_query($conn, $sql_sp);
 $row_sp = mysqli_fetch_array($query_sp);
+
+//binh luan
+$sql_bl = "SELECT * FROM bl_sp,thanh_vien WHERE bl_sp.id_thanhvien=thanh_vien.id_thanhvien AND id_sp='$id_sp'";
+$query_bl = mysqli_query($conn, $sql_bl);
+
+$sql_flyer = "SELECT * FROM quang_cao WHERE loai_quangcao='flyer' ORDER BY id_quangcao DESC LIMIT 0,3";
+$query_flyer = mysqli_query($conn, $sql_flyer);
+
 if(isset($_POST['them_cart'])){
-    $_SESSION['sp_mua'] = $_SESSION['sp_mua'].','.$id_sp;
+    $_SESSION['dia_chi'] = $_POST['address'];
+    $_SESSION['sp_mua'] = $_SESSION['sp_mua'].$id_sp.',';
     header("location: index.php?page_layout=cart");
+}
+if(isset($_POST['danh_gia'])){
+    $bl = $_POST['bl'];
+    $time = date('H:i:s - d/m/Y');
+    $id_thanhvien = $_SESSION['id_thanhvien'];
+    $sql_thembl = "INSERT INTO bl_sp(id_sp,id_thanhvien,binh_luan,time) VALUES ('$id_sp','$id_thanhvien','$bl','$time')";
+    $query_thembl = mysqli_query($conn, $sql_thembl);
+    header("'location: index.php?page_layout=product&id_sp='.$id_sp");
 }
 ?>
 
@@ -35,7 +52,7 @@ if(isset($_POST['them_cart'])){
                     <input name="them_cart" type="submit" style="width: 100%; font-size:20px" class="btn btn-primary" value="Thêm vào giỏ hàng">
                 </form>
                 <br>
-                <a href="#" title="">Hướng dẫn mua hàng</a>
+                <a href="index.php?page_layout=ho-tro&ho-tro=huongdanmuahang" title="">Hướng dẫn mua hàng</a>
             </div>
         </div>
         <div id="address" class="col-lg-3 col-md-3 col-ms-3 col-3">
@@ -117,42 +134,57 @@ if(isset($_POST['them_cart'])){
             <div id="comments">
                 <p>Đánh giá và nhận xét</p>
                 <div>
+                    <?php
+                    while ($row_bl=mysqli_fetch_array($query_bl)){
+                    ?>
                     <div class="comment-item">
-                        <p>Nghiêm Tiến Tuân</p>
-                        <p style="color: #ccc; font-size: 11px;">11 tháng trước</p>
-                        <p>sjbdf sds sf sge sge sge svse vfs bử bse sg </p>
+                        <p><?php echo $row_bl['ho_ten'];?></p>
+                        <p style="color: #ccc; font-size: 11px;"><?php echo $row_bl['time'];?></p>
+                        <p><?php echo $row_bl['binh_luan'];?></p>
                         <hr>
                     </div>
-                    <form method="get" accept-charset="utf-8">
-                        <textarea name="danh-gia"></textarea>
-                        <button class="btn btn-primary">Đánh giá</button>
+                    <?php
+                    }
+                    ?>
+                    <form
+                        <?php
+                        if(!isset($_SESSION['email'])&&!isset($_SESSION['mk'])){
+                            echo 'style="display: none"';
+                        }
+                        ?>
+                            method="post" accept-charset="utf-8">
+                        <textarea name="bl"></textarea>
+                        <script type="text/javascript">
+                            CKEDITOR.replace('danh-gia',{
+                                filebrowserBrowseUrl: '/quantri/ckeditor/ckfinder/ckfinder.html',
+                                filebrowserImageBrowseUrl: '/quantri/ckeditor/ckfinder/ckfinder.html?type=Images',
+                                filebrowserUploadUrl: '/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                                filebrowserImageUploadUrl: '/quantri/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+                            });
+                        </script>
+                        <input name="danh_gia" type="submit" class="btn btn-primary" value="Đánh giá">
                     </form>
+                    <?php
+                    if(!isset($_SESSION['email'])&&!isset($_SESSION['mk'])){
+                        echo '<p><a href="index.php?page_layout=login">Đăng nhập</a> để bình luận!</p>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
         <div id="quang-cao" class="col-lg-2 col-md-2 col-ms-2">
             <p>Xem thêm</p>
+            <?php
+            while ($row_flyer=mysqli_fetch_array($query_flyer)){
+            ?>
             <div>
                 <a href="#" title="">
-                    <img src="img/products/iphone4.jpg" class="img-thumbnail">
-                    <p>iphone 4s</p>
-                    <p>2.5tr</p>
+                    <img src="img/flyer/<?php echo $row_flyer['anh_quangcao'];?>" class="img-thumbnail">
                 </a>
             </div>
-            <div>
-                <a href="#" title="">
-                    <img src="img/products/iphone4.jpg" class="img-thumbnail">
-                    <p>iphone 4s</p>
-                    <p>2.5tr</p>
-                </a>
-            </div>
-            <div>
-                <a href="#" title="">
-                    <img src="img/products/iphone4.jpg" class="img-thumbnail">
-                    <p>iphone 4s</p>
-                    <p>2.5tr</p>
-                </a>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>

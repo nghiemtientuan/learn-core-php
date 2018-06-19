@@ -1,5 +1,7 @@
 <?php
-
+if(!isset($_COOKIE['sp_mua'])){
+    $_COOKIE['sp_mua']='';
+}
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $mk = $_POST['mk'];
@@ -12,6 +14,7 @@ if(isset($_POST['submit'])){
         }else {
             $rows = mysqli_fetch_array($query);
             $_SESSION['ten'] = $rows['ho_ten'];
+            $_SESSION['id_thanhvien'] = $rows['id_thanhvien'];
             $_SESSION['email'] = $email;
             $_SESSION['mk'] = $mk;
             if($rows['level']==0){

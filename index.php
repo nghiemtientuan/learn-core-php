@@ -1,7 +1,9 @@
 <?php
 ob_start();
 session_start();
-$_SESSION['sp_mua']='';
+if(!isset($_SESSION['sp_mua'])){
+    $_SESSION['sp_mua']='';
+}
 include_once 'quantri/ketnoi.php';
 
 $sql_dm = "SELECT * FROM dm_sp";
@@ -21,6 +23,7 @@ $query_dm = mysqli_query($conn, $sql_dm);
 	<script src="js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/web.js"></script>
+    <script type="text/javascript" src="quantri/ckeditor/ckeditor.js"> </script>
 	<!-- <script type="text/javascript" src="js/web.js"></script> -->
 	<script type="text/javascript">
         jssor_1_slider_init = function() {
@@ -114,7 +117,7 @@ $query_dm = mysqli_query($conn, $sql_dm);
 					</div>
 					<div id="icon" class="col-lg-4 col-md-4 col-sm-4 col-12">
 						<div class="icon-item col-lg-3 col-md-3 col-sm-3 col-12">
-							<a href="index.php?page_layout=login" title="">
+							<a href="<?php if(isset($_SESSION['email'])){echo 'index.php?page_layout=logout';}else{echo 'index.php?page_layout=login';}?>" title="">
 								<img src="img/login.png" class="img-thumbnail">
 								<p><?php if(isset($_SESSION['ten'])){echo $_SESSION['ten'];}else{echo 'Login';}?></p>
 							</a>
@@ -216,6 +219,9 @@ $query_dm = mysqli_query($conn, $sql_dm);
                             break;
                         case "login":
                             include_once 'login.php';
+                            break;
+                        case "logout":
+                            include_once 'logout.php';
                             break;
                         case "product":
                             include_once 'product.php';
