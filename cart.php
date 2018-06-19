@@ -4,7 +4,10 @@ $cac_san_pham = explode(",",$mua_hang);
 $tong_tien=0;
 
 if(isset($_POST['thanh_toan'])){
-    header("location: quantri/sendMailThanhToan.php");
+    if(isset($_SESSION['email'])){
+        header("location: quantri/sendMailThanhToan.php");
+    }
+    header("location: index.php?page_layout=thanhtoan");
 }
 ?>
 

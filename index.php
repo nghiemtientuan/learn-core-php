@@ -235,6 +235,12 @@ $query_dm = mysqli_query($conn, $sql_dm);
                         case "home":
                             include_once 'home.php';
                             break;
+                        case "xacnhan":
+                            include_once 'xacnhan.php';
+                            break;
+                        case "thanhtoan":
+                            include_once 'thanhtoan.php';
+                            break;
                     }
                 }else{
                     include_once 'home.php';

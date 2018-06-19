@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!isset($_SESSION['mail_dky'])){
+    header('location: ../index.php');
+}
+
+$mail = $_SESSION['email'];
 /**
  * Created by PhpStorm.
  * User: TuânNghiêm
@@ -14,9 +20,9 @@ $nFrom = "TNT STUDIO";    //mail duoc gui tu dau, thuong de ten cong ty ban
 $mFrom = 'tntstudioshop@gmail.com';  //dia chi email cua ban
 $mPass = 'Tientuan1997';       //mat khau email cua ban
 $nTo = 'Huudepzai'; //Ten nguoi nhan
-$mTo = 'tuannghiemtien97@gmail.com';   //dia chi nhan mail
+$mTo = $mail;   //dia chi nhan mail
 $mail             = new PHPMailer();
-$body             = 'Bạn đã nhận được mail của tnt studio';   // Noi dung email
+$body             = 'Bạn đã đặt được hàng của tnt studio';   // Noi dung email
 $title = 'mail xác nhận';   //Tieu de gui mail
 $mail->IsSMTP();
 $mail->CharSet  = "utf-8";
@@ -36,10 +42,10 @@ $mail->MsgHTML($body);// noi dung chinh cua mail se nam o day.
 $mail->AddAddress($mTo, $nTo);
 // thuc thi lenh gui mail
 if(!$mail->Send()) {
-    echo 'Co loi!';
+    echo 'Có lỗi, vui lòng quay lại xem lại mail và gửi lại!';
 
 } else {
-
-    echo 'Mail đã được gửi';
+    $_SESSION['sp_mua']='';
+    header('location: index.php?page_layout=cart');
 }
 ?>
