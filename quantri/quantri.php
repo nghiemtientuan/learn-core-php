@@ -65,7 +65,7 @@ if(!isset($_SESSION['email'])){
             <ul class="nav menu">
                 <li class="active"><a href="quantri.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Trang chủ quản trị</a></li>
                 <li class="parent ">
-                    <a href="#">
+                    <a href="quantri.php?page_layout=danhsachtv">
                         <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý thành viên
                     </a>
                     <ul class="children collapse" id="sub-item-1">
@@ -76,6 +76,19 @@ if(!isset($_SESSION['email'])){
                             </a>
                         </li>
                     </ul>			
+                </li>
+                <li class="parent ">
+                    <a href="quantri.php?page_layout=danhsachnv">
+                        <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý nhân viên
+                    </a>
+                    <ul class="children collapse" id="sub-item-1">
+                        <li>
+                            <a href="#">
+                                <svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg>
+                                Thêm mới
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="parent ">
                     <a href="quantri.php?page_layout=danhsachdm">
@@ -144,14 +157,32 @@ if(!isset($_SESSION['email'])){
                     case "danhsachsp":
                         include_once 'danhsachsp.php';
                         break;
+                    case "danhsachtv":
+                        include_once 'danhsachtv.php';
+                        break;
+                    case "danhsachnv":
+                        include_once 'danhsachnv.php';
+                        break;
                     case "suadm":
                         include_once 'suadm.php';
+                        break;
+                    case "suanv":
+                        include_once 'suanv.php';
+                        break;
+                    case "suatv":
+                        include_once 'suatv.php';
                         break;
                     case "suadmc":
                         include_once 'suadmc.php';
                         break;
                     case "suasp":
                         include_once 'suasp.php';
+                        break;
+                    case "themtv":
+                        include_once 'themtv.php';
+                        break;
+                    case "themnv":
+                        include_once 'themnv.php';
                         break;
                     case "themdm":
                         include_once 'themdm.php';

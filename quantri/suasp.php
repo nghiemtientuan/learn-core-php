@@ -154,11 +154,8 @@ tinh_trang='$tinh_trang',khuyen_mai='$khuyen_mai',chi_tiet='$chi_tiet_sp' WHERE 
 
 
                     </div>
-
                     <button type="submit" class="btn btn-primary" name="submit">Cập nhật</button>
                     <button type="reset" class="btn btn-default" name="reset">Làm mới</button>
-
-
                 </form>
             </div>
         </div>
