@@ -7,24 +7,24 @@ if(isset($_GET['page'])){
 }
 $rowsPerPage = 10;
 $perRow = $page*$rowsPerPage - $rowsPerPage;
-$sql_page = "SELECT * FROM  sp,sp_chinhhang WHERE sp.id_cty=sp_chinhhang.id_cty ORDER BY id_sp DESC LIMIT $perRow,$rowsPerPage";
+$sql_page = "SELECT * FROM  quang_cao ORDER BY id_quangcao DESC LIMIT $perRow,$rowsPerPage";
 $query_page = mysqli_query($conn, $sql_page);
-$totalRows = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM sp"));//tổng số bản ghi
+$totalRows = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM quang_cao"));//tổng số bản ghi
 $totalPages = ceil($totalRows/$rowsPerPage);//Làm tròn số trang lên
 
 
 $listPage="";
 for($i=1;$i<=$totalPages;$i++){
     if($page==$i){
-        $listPage.='<li class="active"><a href="quantri.php?page_layout=danhsachsp&page='.$i.'">'.$i.'</a></li>';
+        $listPage.='<li class="active"><a href="quantri.php?page_layout=danhsachquangcao&page='.$i.'">'.$i.'</a></li>';
     }else{
-        $listPage.='<li><a href="quantri.php?page_layout=danhsachsp&page='.$i.'">'.$i.'</a></li>';
+        $listPage.='<li><a href="quantri.php?page_layout=danhsachquangcao&page='.$i.'">'.$i.'</a></li>';
     }
 }
 ?>
 <script>
-    function xoaSanPham(){
-        var conf = confirm("Bạn có chắc chắn muốn xóa sản phẩm này hay không?");
+    function xoaQuangCao(){
+        var conf = confirm("Bạn có chắc chắn muốn xóa ảnh này hay không?");
         return conf;
     }
 </script>
@@ -41,7 +41,7 @@ for($i=1;$i<=$totalPages;$i++){
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Quản lý sản phẩm</h1>
+        <h1 class="page-header">Quản lý quảng cáo</h1>
     </div>
 </div><!--/.row-->
 
@@ -50,19 +50,16 @@ for($i=1;$i<=$totalPages;$i++){
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body" style="position: relative;">
-                <a href="quantri.php?page_layout=themsp" class="btn btn-primary"
-                   style="margin: 10px 0 20px 0; position: absolute;">Thêm sản phẩm
+                <a href="quantri.php?page_layout=themquangcao" class="btn btn-primary"
+                   style="margin: 10px 0 20px 0; position: absolute;">Thêm quảng cáo
                     mới</a>
                 <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
                        data-search="true" data-select-item-name="toolbar1" data-sort-name="name" data-sort-order="desc">
                     <thead>
                     <tr>
                         <th data-sortable="true">ID</th>
-                        <th data-sortable="true">Tên sản phẩm</th>
-                        <th data-sortable="true">Giá</th>
-                        <th data-sortable="true">Nhà cung cấp</th>
+                        <th data-sortable="true">Loại quảng cáo</th>
                         <th data-sortable="true">Ảnh mô tả</th>
-                        <th data-sortable="true">Sửa</th>
                         <th data-sortable="true">Xóa</th>
                     </tr>
                     </thead>
@@ -71,22 +68,13 @@ for($i=1;$i<=$totalPages;$i++){
                     while ($row=mysqli_fetch_array($query_page)){
                     ?>
                     <tr style="height: 300px;">
-                        <td data-checkbox="true"><?php echo $row['id_sp'];?></td>
-                        <td data-checkbox="true"><a href="quantri.php?page_layout=suasp&id_sp=<?php echo $row['id_sp'];?>"><?php echo $row['ten_sp'];?></a></td>
-                        <td data-checkbox="true"><?php echo $row['gia'];?></td>
-                        <td data-sortable="true"><?php echo $row['ten_cty'];?></td>
+                        <td data-checkbox="true"><?php echo $row['id_quangcao'];?></td>
+                        <td data-checkbox="true"><?php echo $row['loai_quangcao'];?></td>
                         <td data-sortable="true">
-                            <span class="thumb"><img width="80px" height="150px" src="../img/anh_sp/<?php echo $row['anh_sp'];?>"/></span>
-
+                            <span class="thumb"><img width="80px" height="150px" src="../img/<?php echo $row['loai_quangcao'];?>/<?php echo $row['anh_quangcao'];?>"/></span>
                         </td>
                         <td>
-                            <a href="quantri.php?page_layout=suasp&id_sp=<?php $row['id_sp'];?>"><span><svg class="glyph stroked brush"
-                                                                               style="width: 20px;height: 20px;"><use
-                                                xlink:href="#stroked-brush"/></svg></span></a>
-                        </td>
-
-                        <td>
-                            <a onclick="return xoaSanPham();" href="xoasp.php?id_sp=<?php echo $row['id_sp'];?>"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
+                            <a onclick="return xoaQuangCao();" href="xoaquangcao.php?id_sp=<?php echo $row['id_quangcao'];?>"><span><svg class="glyph stroked cancel" style="width: 20px;height: 20px;"><use
                                                 xlink:href="#stroked-cancel"/></svg></span></a>
                         </td>
                     </tr>

@@ -22,10 +22,6 @@ for($i=1;$i<=$totalPages;$i++){
     }
 }
 ?>
-<?php
-$sql = "SELECT * FROM thanh_vien WHERE level=1 OR level=2 ORDER BY level DESC";
-$query = mysqli_query($conn, $sql);
-?>
 <script>
     function xoaThanhVien(){
         var conf = confirm("Bạn có chắc chắn muốn xóa thành viên này hay không?");
@@ -73,7 +69,7 @@ $query = mysqli_query($conn, $sql);
                     </thead>
                     <tbody>
                     <?php
-                    while ($row=mysqli_fetch_array($query)){
+                    while ($row=mysqli_fetch_array($query_page)){
                         ?>
                         <tr style="height: 300px;">
                             <td data-checkbox="true"><?php echo $row['id_thanhvien'];?></td>

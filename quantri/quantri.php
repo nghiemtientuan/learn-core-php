@@ -116,13 +116,18 @@ if(!isset($_SESSION['email'])){
                     </ul>				
                 </li>
                 <li class="parent ">
+                    <a href="quantri.php?page_layout=danhsachdonhang">
+                        <span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý đơn hàng
+                    </a>
+                </li>
+                <li class="parent ">
                     <a href="#">
                         <span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked two messages"><use xlink:href="#stroked-two-messages"/></svg></span> Quản lý bình luận
                     </a>
 
                 </li>
                 <li class="parent ">
-                    <a href="#">
+                    <a href="quantri.php?page_layout=danhsachquangcao">
                         <span data-toggle="collapse" href="#sub-item-5"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý quảng cáo
                     </a>
                     <ul class="children collapse" id="sub-item-5">
@@ -134,8 +139,6 @@ if(!isset($_SESSION['email'])){
 
                     </ul>			
                 </li>
-
-                <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"/></svg> Cấu hình</a></li>
 
                 <li role="presentation" class="divider"></li>
                 <li><a href="dangxuat.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Đăng xuất</a></li>
@@ -192,6 +195,15 @@ if(!isset($_SESSION['email'])){
                         break;
                     case "themsp":
                         include_once 'themsp.php';
+                        break;
+                    case "themquangcao":
+                        include_once 'themquangcao.php';
+                        break;
+                    case "danhsachdonhang":
+                        include_once 'danhsachdonhang.php';
+                        break;
+                    case "danhsachquangcao":
+                        include_once 'danhsachquangcao.php';
                         break;
                 }
             }else{
