@@ -54,7 +54,7 @@ $query = mysqli_query($conn, $sql);
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body" style="position: relative;">
-                <a href="quantri.php?page_layout=themsp" class="btn btn-primary"
+                <a href="quantri.php?page_layout=themnv" class="btn btn-primary"
                    style="margin: 10px 0 20px 0; position: absolute;">Thêm nhân viên mới</a>
                 <table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
                        data-search="true" data-select-item-name="toolbar1" data-sort-name="name" data-sort-order="desc">

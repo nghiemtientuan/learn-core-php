@@ -69,7 +69,7 @@ for($i=1;$i<=$totalPages;$i++){
                     ?>
                     <tr>
                         <td data-checkbox="true"><?php echo $row['id_dm'];?></td>
-                        <td data-checkbox="true"><a href="quantri.php?page_layout=danhsachdmc"><?php echo $row['ten_dm'];?></a></td>
+                        <td data-checkbox="true"><a href="quantri.php?page_layout=danhsachdmc&id_dm=<?php echo $row['id_dm'];?>"><?php echo $row['ten_dm'];?></a></td>
                         <td>
                             <a href="quantri.php?page_layout=suadm&id_dm=<?php echo $row['id_dm'];?>"><span><svg class="glyph stroked brush" style="width: 20px;height: 20px;"><use
                                                 xlink:href="#stroked-brush"/></svg></span></a>

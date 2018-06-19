@@ -43,7 +43,6 @@ if(isset($_POST['submit'])){
         <div class="panel panel-default">
             <div class="panel-heading">Sửa thông tin thành viên</div>
             <div class="panel-body">
-
                 <form method="post" enctype="multipart/form-data" role="form">
                     <div class="col-md-6">
                         <div class="form-group">
