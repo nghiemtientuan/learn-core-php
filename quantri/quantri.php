@@ -75,9 +75,9 @@ if(!isset($_SESSION['email'])){
                                 Thêm mới
                             </a>
                         </li>
-                    </ul>			
+                    </ul>
                 </li>
-                <li class="parent ">
+                <li <?php if($row['level']==1){echo 'style="display:none;"';}?> class="parent ">
                     <a href="quantri.php?page_layout=danhsachnv">
                         <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý nhân viên
                     </a>

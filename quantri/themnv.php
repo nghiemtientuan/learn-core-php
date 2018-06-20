@@ -1,4 +1,7 @@
 <?php
+if($_SESSION['level']==1){
+    header('locaton: quantri.php');
+}
 if(isset($_POST['submit'])){
     $ten_nhanvien = $_POST['ten_nhanvien'];
     $mail = $_POST['mail'];

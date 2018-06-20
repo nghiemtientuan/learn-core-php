@@ -46,7 +46,42 @@
         <?php
         if (isset($_GET['ho-tro'])){
             switch ($_GET['ho-tro']){
-
+                case 'gioi_thieu_cong_ty':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'cau_hoi_thuong_gap':
+                    include_once 'cau_hoi_thuong_gap.php';
+                    break;
+                case 'chinh_sach_tnt_shop':
+                    include_once 'chinh_sach_tnt_shop.php';
+                    break;
+                case 'he_thong_bao_hanh':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'tin_tuyen_dung':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'tin_khuyen_mai':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'huong_dan_mua_online':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'huong_dan_mua_tra_gop':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'he_thong_cua_hang':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'dich_vu_ship_hang':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'doi_tra':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
+                case 'xa_hang':
+                    include_once 'gioi_thieu_cong_ty.php';
+                    break;
             }
         }else{
             include_once 'gioi_thieu.php';

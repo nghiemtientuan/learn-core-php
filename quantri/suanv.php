@@ -1,4 +1,7 @@
 <?php
+if($_SESSION['level']==1){
+    header('locaton: quantri.php');
+}
 $id_thanhvien = $_GET['id_thanhvien'];
 
 $sql_thanhvien = "SELECT * FROM thanh_vien WHERE id_thanhvien='$id_thanhvien'";

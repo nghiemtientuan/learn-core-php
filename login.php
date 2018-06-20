@@ -15,6 +15,7 @@ if(isset($_POST['submit'])){
             $rows = mysqli_fetch_array($query);
             $_SESSION['ten'] = $rows['ho_ten'];
             $_SESSION['id_thanhvien'] = $rows['id_thanhvien'];
+            $_SESSION['level'] = $rows['level'];
             $_SESSION['email'] = $email;
             $_SESSION['mk'] = $mk;
             if($rows['level']==0){

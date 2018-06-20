@@ -282,26 +282,26 @@ $query_dm = mysqli_query($conn, $sql_dm);
 				<div id="info" class="col-lg-12 col-12">
 					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-6" style="padding:0px;">
 						<ul>
-							<li><a href="#">Giới thiệu về công ty</a></li>
-							<li><a href="#">Câu hỏi thường gặp</a></li>
-							<li><a href="#">Chính sách TNT Shop</a></li>
-							<li><a href="#">Hệ thống bảo hành</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=gioi_thieu_cong_ty">Giới thiệu về công ty</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=cau_hoi_thuong_gap">Câu hỏi thường gặp</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=chinh_sach_tnt_shop">Chính sách TNT Shop</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=he_thong_bao_hanh">Hệ thống bảo hành</a></li>
 						</ul>
 					</div>
 					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-6" style="padding:0px;">
 						<ul>
-							<li><a href="#">Tin tuyển dụng</a></li>
-							<li><a href="#">Tin khuyến mãi</a></li>
-							<li><a href="#">Hướng dẫn mua online</a></li>
-							<li><a href="#">Hướng dẫn mua trả góp</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=tin_tuyen_dung">Tin tuyển dụng</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=tin_khuyen_mai">Tin khuyến mãi</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=huong_dan_mua_online">Hướng dẫn mua online</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=huong_dan_mua_tra_gop">Hướng dẫn mua trả góp</a></li>
 						</ul>
 					</div>
 					<div class="info-item col-lg-3 col-md-6 col-sm-6 col-6" style="padding:0px;">
 						<ul>
-							<li><a href="#">Hệ thống của hàng</a></li>
-							<li><a href="#">Dịch vụ Ship hàng</a></li>
-							<li><a href="#">Đổi trả</a></li>
-							<li><a href="#">Xả hàng</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=he_thong_cua_hang">Hệ thống của hàng</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=dich_vu_ship_hang">Dịch vụ Ship hàng</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=doi_tra">Đổi trả</a></li>
+							<li><a href="index.php?page_layout=ho-tro&ho-tro=xa_hang">Xả hàng</a></li>
 						</ul>
 					</div>
 					<div id="contact" class="col-lg-3 col-md-6 col-sm-6 col-6" style="padding:0px;">

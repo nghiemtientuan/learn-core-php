@@ -7,6 +7,9 @@
  */
 
 session_start();
+if($_SESSION['level']==1){
+    header('locaton: quantri.php');
+}
 if(isset($_SESSION['email']) && isset($_SESSION['mk'])){
     $id_thanhvien = $_GET['id_thanhvien'];
     include_once 'ketnoi.php';

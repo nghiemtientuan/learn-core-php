@@ -1,5 +1,8 @@
 <?php
 //phân trang
+if($_SESSION['level']==1){
+    header('locaton: quantri.php');
+}
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else{
