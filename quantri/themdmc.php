@@ -2,7 +2,7 @@
 $id_dm = $_GET['id_dm'];
 if(isset($_POST['submit'])){
     $ten_dmc = $_POST['ten_dmc'];
-    if(isset($ten_dm)){
+    if(isset($ten_dmc)){
         $sql = "INSERT INTO dmc_sp(ten_dmc,id_dm) VALUES ('$ten_dmc','$id_dm')";
         $query = mysqli_query($conn, $sql);
         header("location: quantri.php?page_layout=danhsachdmc&id_dm='$id_dm'");

@@ -176,7 +176,7 @@ $query_flyer = mysqli_query($conn, $sql_flyer);
             ?>
             <div class="product-item col-lg-2 col-md-4 col-sm-4 col-12" style="padding:0px;">
                 <a href="index.php?page_layout=product&id_sp=<?php echo $row_sp['id_sp'];?>" title="">
-                    <img src="img/anh/<?php echo $row_sp['anh_sp'];?>" class="img-thumbnail">
+                    <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>" class="img-thumbnail">
                     <h4><?php echo $row_sp['ten_sp'];?></h4>
                     <b><?php echo $row_sp['gia'];?></b>
                     <p>Khuyến mại:<?php echo $row_sp['khuyen_mai'];?></p>

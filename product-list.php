@@ -4,6 +4,8 @@ if(isset($_GET['id_dmc'])){
 }else{
     header('location: index.php');
 }
+$sql_sp = "SELECT * FROM sp WHERE id_dm='$id_dmc' ORDER BY id_sp ASC";
+$query_sp = mysqli_query($conn, $sql_sp);
 
 $sql_dmc = "SELECT * FROM dmc_sp WHERE dmc_sp.id_dmc='$id_dmc'";
 $query_dmc = mysqli_query($conn, $sql_dmc);
@@ -16,9 +18,6 @@ $row_dm = mysqli_fetch_array($query_dm);
 
 $sql_cdmc = "SELECT * FROM dmc_sp WHERE dmc_sp.id_dm='$id_dm'";
 $query_cdmc = mysqli_query($conn, $sql_cdmc);
-
-$sql_sp = "SELECT * FROM sp,dmc_sp WHERE sp.id_dm=dmc_sp.id_dmc AND dmc_sp.id_dmc='$id_dmc' ORDER BY id_sp ASC";
-$query_sp = mysqli_query($conn, $sql_sp);
 
 if(isset($_POST['them_cart'])){
     $_SESSION['sp_mua'] = $_SESSION['sp_mua'].','.$id_sp;
@@ -103,7 +102,7 @@ if(isset($_POST['them_cart'])){
 <!-- end-aside -->
 
 <!-- main -->
-<div id="main-product-list">
+<div id="main-product-list" style="background-color: #fff;">
     <div id="bar-OP" class="col-lg-2 col-md-2 col-ms-2 col-2">
         <div>
             <p style="background: none; color: #ff9600;">Danh mục sản phẩm</p>
@@ -147,7 +146,7 @@ if(isset($_POST['them_cart'])){
         <div id="product-values-OP">
             <div>
                 <h3><?php echo $row_dmc['ten_dmc'];?></h3>
-                <p><?php echo $row_num=mysqli_num_rows($query_sp)?> sản phẩm tìm thấy</p>
+                <p><?php echo $row_num=mysqli_num_rows($query_sp);?> sản phẩm tìm thấy</p>
             </div>
             <div>
                 <p>Sắp xếp theo:</p>
@@ -158,15 +157,15 @@ if(isset($_POST['them_cart'])){
             while ($row_sp=mysqli_fetch_array($query_sp)){
             ?>
             <div class="product-item-OP col-lg-3" style="padding: 0px;">
-                <a href="#" title="">
-                    <img class="img-thumbnail" src="img/products/<?php $row_sp['anh_sp'];?>">
-                    <h4><?php $row_sp['ten_sp'];?></h4>
-                    <s>2.500.000</s><b> <?php $row_sp['gia'];?></b>
+                <a href="index.php?page_layout=product&id_sp=<?php echo $row_sp['id_sp'];?>" title="">
+                    <img style="width: 100%" class="img-thumbnail" src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>">
+                    <h4><?php echo $row_sp['ten_sp'];?></h4>
+                    <s>2.500.000</s><b> <?php echo $row_sp['gia'];?></b>
                     <p>-40%</p>
                 </a>
                 <div>
                     <form method="post">
-                        <input name="them_cart" type="submit" class="btn btn-primary" value="Thêm vào giỏ hàng">
+                        <input id="themvaogiohang" style="width: 100%;" name="them_cart" type="submit" class="btn btn-primary" value="Thêm vào giỏ hàng">
                     </form>
                 </div>
             </div>

@@ -908,7 +908,7 @@ body{
 #main-product-list .product-item-OP:hover{
 	border: 2px solid #ccc;
 }
-#main-product-list .product-item-OP:hover button{
+#main-product-list .product-item-OP:hover #themvaogiohang{
 	display: block;
 }
 #main-product-list .product-item-OP img{
@@ -933,7 +933,7 @@ body{
 #main-product-list .product-item-OP div{
 	height: 37px;
 }
-#main-product-list .product-item-OP button{
+#main-product-list .product-item-OP input{
 	width: 100%;
 	display: none;
 }

@@ -31,7 +31,7 @@ if(isset($_POST['danh_gia'])){
 <div id="main-product">
     <div id="product-top">
         <div id="product-img" class="col-lg-4 col-md-4 col-ms-4 col-4">
-            <img src="img/products/iphone6-32gb.jpg" class="img-thumbnail">
+            <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>" class="img-thumbnail">
         </div>
         <div id="product-name" class="col-lg-5 col-md-5 col-ms-5 col-5">
             <div>
@@ -99,7 +99,7 @@ if(isset($_POST['danh_gia'])){
                 <h4>Mô tả sản phẩm <?php echo $row_sp['ten_sp'];?> - Hãng phân phối chính
                     thức</h4>
                 <hr>
-                <img src="img/products/<?php echo $row_sp['anh_sp'];?>">
+                <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>">
                 <p><?php echo $row_sp['chi_tiet'];?>
                 </p>
                 <hr>
