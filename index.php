@@ -25,6 +25,8 @@ $query_dm = mysqli_query($conn, $sql_dm);
 	<script src="js/web.js"></script>
     <script type="text/javascript" src="quantri/ckeditor/ckeditor.js"> </script>
 	<!-- <script type="text/javascript" src="js/web.js"></script> -->
+    <script type="text/javascript" src="joom/jquery-1.8.3.min.js"></script>
+    <script src="joom/jquery.elevatezoom.js"></script>
 	<script type="text/javascript">
         jssor_1_slider_init = function() {
 

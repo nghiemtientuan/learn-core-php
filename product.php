@@ -26,12 +26,18 @@ if(isset($_POST['danh_gia'])){
 }
 ?>
 
-
-
+<script>
+    $('#zoom_01').elevateZoom({
+        zoomType: "inner",
+        cursor: "crosshair",
+        zoomWindowFadeIn: 500,
+        zoomWindowFadeOut: 750
+    });
+</script>
 <div id="main-product">
     <div id="product-top">
         <div id="product-img" class="col-lg-4 col-md-4 col-ms-4 col-4">
-            <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>" class="img-thumbnail">
+            <img id="zoom_01" src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>" class="img-thumbnail" data-zoom-image="img/anh_sp/<?php echo $row_sp['anh_sp'];?>">
         </div>
         <div id="product-name" class="col-lg-5 col-md-5 col-ms-5 col-5">
             <div>
@@ -99,7 +105,8 @@ if(isset($_POST['danh_gia'])){
                 <h4>Mô tả sản phẩm <?php echo $row_sp['ten_sp'];?> - Hãng phân phối chính
                     thức</h4>
                 <hr>
-                <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>">
+                 <img src="img/anh_sp/<?php echo $row_sp['anh_sp'];?>">
+
                 <p><?php echo $row_sp['chi_tiet'];?>
                 </p>
                 <hr>
